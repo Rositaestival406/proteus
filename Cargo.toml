@@ -1,0 +1,20 @@
+[package]
+name = "proteus"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "proteus"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+goblin = "0.8"
+sha2 = "0.10"
+pyo3 = { version = "0.22", features = ["extension-module"] }
+rayon = "1.10"
+memmap2 = "0.9"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
