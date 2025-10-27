@@ -1,10 +1,23 @@
+#!/usr/bin/env python3
+
 import sys
 import json
 from pathlib import Path
 from typing import Optional
-from python.analyzer import ProteusAnalyzer
-from python.ml_detector import ProteusMLDetector
-import proteus
+
+
+def check_proteus_module():
+    try:
+        import proteus
+        from python.analyzer import ProteusAnalyzer
+
+        return True
+    except ImportError as e:
+        print(f"[!] Error: {e}")
+        print("\n[*] Solution:")
+        print("    1. Activate venv: venv\\Scripts\\activate")
+        print("    2. Build module: maturin develop --release")
+        return False
 
 
 def print_banner():
@@ -18,9 +31,17 @@ def print_banner():
 
 
 def analyze_file_cmd(file_path: str, show_strings: bool = False):
-    analyzer = ProteusAnalyzer()
+    if not Path(file_path).exists():
+        print(f"[!] Error: File not found - {file_path}")
+        return
+
     try:
+        import proteus
+        from python.analyzer import ProteusAnalyzer
+
+        analyzer = ProteusAnalyzer()
         result = analyzer.analyze_single(file_path)
+
         print(f"\n[*] Analysis: {file_path}")
         print(f"[+] Type: {result['type']}")
         print(f"[+] Entropy: {result['entropy']:.2f}")
@@ -61,8 +82,14 @@ def analyze_file_cmd(file_path: str, show_strings: bool = False):
 
 
 def analyze_directory_cmd(dir_path: str, output: Optional[str] = None):
-    analyzer = ProteusAnalyzer()
+    if not Path(dir_path).exists():
+        print(f"[!] Error: Directory not found - {dir_path}")
+        return
+
     try:
+        from python.analyzer import ProteusAnalyzer
+
+        analyzer = ProteusAnalyzer()
         results = analyzer.analyze_directory(dir_path)
 
         malicious = [r for r in results if r["verdict"] == "MALICIOUS"]
@@ -75,7 +102,7 @@ def analyze_directory_cmd(dir_path: str, output: Optional[str] = None):
         if malicious:
             print(f"\n[!] Malicious Files:")
             for r in malicious:
-                print(f"    {r['path']} (Score: {r['score']:.2f})")
+                print(f"    {Path(r['path']).name} (Score: {r['score']:.2f})")
 
         if output:
             with open(output, "w") as f:
@@ -87,7 +114,13 @@ def analyze_directory_cmd(dir_path: str, output: Optional[str] = None):
 
 
 def strings_cmd(file_path: str):
+    if not Path(file_path).exists():
+        print(f"[!] Error: File not found - {file_path}")
+        return
+
     try:
+        import proteus
+
         result = proteus.extract_strings_from_file(file_path)
 
         print(f"\n[*] String Analysis: {file_path}")
@@ -125,6 +158,9 @@ def strings_cmd(file_path: str):
 
 def main():
     print_banner()
+
+    if not check_proteus_module():
+        sys.exit(1)
 
     if len(sys.argv) < 2:
         print("Usage:")

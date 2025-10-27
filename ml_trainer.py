@@ -56,23 +56,33 @@ class ProteusMLTrainer:
         print("[*] Processing malicious samples...")
         mal_path = Path(malicious_dir)
         if mal_path.exists():
-            for file in mal_path.glob("**/*.*"):
-                if file.suffix.lower() in [".exe", ".dll", ".malware"]:
-                    features = self.extract_features(str(file))
-                    if features is not None:
-                        X.append(features)
-                        y.append(1)
-                        print(f"    [+] {file.name}")
+            mal_files = list(mal_path.glob("**/*.*"))
+            # Filter for executable files
+            mal_files = [
+                f for f in mal_files if f.suffix.lower() in [".exe", ".dll", ".malware"]
+            ]
+
+            for file in mal_files:
+                features = self.extract_features(str(file))
+                if features is not None:
+                    X.append(features)
+                    y.append(1)
+                    print(f"    [+] {file.name}")
+        else:
+            print(f"[!] Malicious directory not found: {malicious_dir}")
 
         print(f"\n[*] Processing clean samples...")
         clean_path = Path(clean_dir)
         if clean_path.exists():
-            for file in clean_path.glob("**/*.exe"):
+            clean_files = list(clean_path.glob("**/*.exe"))
+            for file in clean_files:
                 features = self.extract_features(str(file))
                 if features is not None:
                     X.append(features)
                     y.append(0)
                     print(f"    [+] {file.name}")
+        else:
+            print(f"[!] Clean directory not found: {clean_dir}")
 
         return np.array(X), np.array(y)
 
@@ -89,21 +99,19 @@ class ProteusMLTrainer:
         if len(unique) < 2:
             print("[!] Only one class in dataset. Cannot train classifier.")
             print("[!] Need both malicious and clean samples.")
-            print("[!] Run: python malware_collector.py")
+            print("[!] Run: python test_dataset_builder.py")
             return
 
         if np.min(counts) < 2:
-            print(
-                "[!] Warning: Very imbalanced dataset. Collecting more malware samples recommended."
-            )
-            print("[!] Skipping train/test split. Training on full dataset.")
+            print("[!] Warning: Very imbalanced dataset.")
+            print("[!] Training on full dataset without test split.")
 
             self.rf_model.fit(X, y)
             train_score = self.rf_model.score(X, y)
             print(f"[+] Training accuracy: {train_score:.4f}")
 
-            print("\n[!] Need more malicious samples for proper evaluation")
-            print("[!] Run: python malware_collector.py")
+            print("\n[!] Need more samples for proper evaluation")
+            print("[!] Consider running: python test_dataset_builder.py")
             return
 
         X_train, X_test, y_train, y_test = train_test_split(
@@ -218,13 +226,29 @@ def main():
 
     trainer = ProteusMLTrainer()
 
-    malicious_dir = "dataset/malicious"
-    clean_dir = "dataset/clean"
+    # Try test_dataset first (default location)
+    malicious_dir = "test_dataset/malicious"
+    clean_dir = "test_dataset/clean"
 
-    if not Path(malicious_dir).exists() or not Path(clean_dir).exists():
-        print(f"[!] Using test_dataset fallback")
-        malicious_dir = "test_dataset/malicious"
-        clean_dir = "test_dataset/clean"
+    # Check if test_dataset exists
+    if not Path(malicious_dir).exists():
+        print(f"[!] test_dataset not found, trying dataset/")
+        malicious_dir = "dataset/malicious"
+        clean_dir = "dataset/clean"
+
+    # Verify at least one directory exists
+    if not Path(malicious_dir).exists() and not Path(clean_dir).exists():
+        print(f"[!] ERROR: No dataset directories found!")
+        print(f"[!] Tried:")
+        print(f"    - test_dataset/malicious")
+        print(f"    - dataset/malicious")
+        print(f"\n[*] Solution:")
+        print(f"    python test_dataset_builder.py")
+        return
+
+    print(f"[*] Using directories:")
+    print(f"    Malicious: {malicious_dir}")
+    print(f"    Clean: {clean_dir}\n")
 
     X, y = trainer.prepare_dataset(malicious_dir, clean_dir)
 
@@ -243,8 +267,7 @@ def main():
 
     if np.sum(y == 1) == 0:
         print("\n[!] ERROR: No malicious samples found!")
-        print("[!] Run: python malware_collector.py")
-        print("[!] Or: python test_dataset_builder.py")
+        print("[!] Run: python test_dataset_builder.py")
         return
 
     trainer.train_random_forest(X, y)
@@ -254,8 +277,7 @@ def main():
     print("\n[+] Training complete!")
 
     if np.sum(y == 1) < 50:
-        print("\n[!] Recommendation: Collect more malware samples")
-        print("[!] Run: python malware_collector.py")
+        print("\n[*] Recommendation: For better accuracy, collect more samples")
 
 
 if __name__ == "__main__":
