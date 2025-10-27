@@ -15,6 +15,14 @@ pub struct FileAnalysis {
     pub threat_score: f64,
     #[pyo3(get)]
     pub suspicious_indicators: Vec<String>,
+    #[pyo3(get)]
+    pub import_count: usize,
+    #[pyo3(get)]
+    pub export_count: usize,
+    #[pyo3(get)]
+    pub section_count: usize,
+    #[pyo3(get)]
+    pub max_section_entropy: f64,
 }
 
 #[pyclass]
@@ -39,7 +47,15 @@ pub struct StringAnalysisResult {
 pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
     let file_type = detect_file_type(&path);
 
-    let (entropy, threat_score, indicators) = match file_type.as_str() {
+    let (
+        entropy,
+        threat_score,
+        indicators,
+        import_count,
+        export_count,
+        section_count,
+        max_section_entropy,
+    ) = match file_type.as_str() {
         "PE" => {
             let analysis = crate::pe_parser::analyze_pe(&path)
                 .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
@@ -48,10 +64,19 @@ pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
                 analysis.suspicious_imports.len(),
                 analysis.num_sections,
             );
+            let max_entropy = analysis
+                .section_entropies
+                .iter()
+                .cloned()
+                .fold(0.0f64, f64::max);
             (
                 analysis.entropy,
                 score.total_score,
                 analysis.suspicious_imports,
+                analysis.import_count,
+                analysis.export_count,
+                analysis.num_sections,
+                max_entropy,
             )
         }
         "ELF" => {
@@ -66,6 +91,10 @@ pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
                 analysis.entropy,
                 score.total_score,
                 analysis.suspicious_symbols,
+                0,
+                0,
+                0,
+                0.0,
             )
         }
         _ => {
@@ -81,6 +110,10 @@ pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
         entropy,
         threat_score,
         suspicious_indicators: indicators,
+        import_count,
+        export_count,
+        section_count,
+        max_section_entropy,
     })
 }
 
