@@ -65,23 +65,14 @@ Proteus is a high-performance malware analysis tool built with Rust and Python, 
 
 ### Installation
 ```bash
-# Clone repository
 git clone https://github.com/ChronoCoders/proteus.git
 cd proteus
 
-# Create virtual environment
 python -m venv venv
-
-# Activate (Windows)
 venv\Scripts\activate
 
-# Activate (Linux/Mac)
-source venv/bin/activate
+pip install maturin numpy scikit-learn requests
 
-# Install dependencies
-pip install maturin numpy scikit-learn torch
-
-# Build Rust extension
 maturin develop --release
 ```
 
@@ -122,7 +113,7 @@ python ml_trainer.py
 ### Example Output
 ```
 ╔═══════════════════════════════════════╗
-║         PROTEUS v0.1.0                ║
+║         PROTEUS v0.1.1                ║
 ║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 
@@ -229,19 +220,14 @@ encrypt, bitcoin, miner, bypass, disable
 
 ### Build & Test
 ```bash
-# Development build
 maturin develop
 
-# Release build
 maturin develop --release
 
-# Run Rust tests
 cargo test
 
-# Run Python tests
 python -m pytest
 
-# Code quality checks
 cargo clippy
 mypy .
 ```
@@ -290,25 +276,11 @@ Contributions are welcome! Please:
 
 ## ⚠️ Limitations
 
-**Current Version (v0.1.0):**
+**Current Version (v0.1.1):**
 - Test dataset uses synthetic malware samples
 - ML models trained on limited data
 - No dynamic analysis capabilities
 - Windows-focused (PE analysis more mature than ELF)
-
-## Known Limitations (v0.1.0)
-
-- Dataset uses synthetic malware samples
-- Real malware collection requires MalwareBazaar API access
-- ML models trained on limited data
-- Proof-of-concept stage
-
-## Roadmap v0.2.0
-
-- [ ] Obtain MalwareBazaar API key
-- [ ] Collect 200+ real malware samples
-- [ ] Retrain ML models with real dataset
-- [ ] Improve detection accuracy
 
 **Recommended Use:**
 - Educational purposes

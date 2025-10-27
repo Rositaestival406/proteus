@@ -2,6 +2,26 @@
 
 All notable changes to Proteus will be documented in this file.
 
+## [0.1.1] - 2025-01-28
+
+### Changed
+- Removed all code comments for production-ready clean code
+- Improved code readability and structure
+- Enhanced error handling in CLI
+- Better exception management across modules
+
+### Fixed
+- Fixed ml_trainer.py dataset path priority (test_dataset first)
+- Fixed test_dataset_builder.py PE header generation
+- Improved file validation in CLI commands
+- Better error messages for missing modules
+
+### Technical
+- Code optimization and cleanup
+- Eliminated redundant comments
+- Enhanced module imports
+- Better type safety
+
 ## [0.1.0] - 2025-01-27
 
 ### Added
