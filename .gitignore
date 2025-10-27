@@ -29,3 +29,4 @@ results.json
 .mypy_cache/
 .coverage
 htmlcov/.pypirc 
+.pypirc 
