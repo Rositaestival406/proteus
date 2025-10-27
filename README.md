@@ -296,6 +296,20 @@ Contributions are welcome! Please:
 - No dynamic analysis capabilities
 - Windows-focused (PE analysis more mature than ELF)
 
+## Known Limitations (v0.1.0)
+
+- Dataset uses synthetic malware samples
+- Real malware collection requires MalwareBazaar API access
+- ML models trained on limited data
+- Proof-of-concept stage
+
+## Roadmap v0.2.0
+
+- [ ] Obtain MalwareBazaar API key
+- [ ] Collect 200+ real malware samples
+- [ ] Retrain ML models with real dataset
+- [ ] Improve detection accuracy
+
 **Recommended Use:**
 - Educational purposes
 - Research projects
