@@ -28,4 +28,4 @@ results.json
 .pytest_cache/
 .mypy_cache/
 .coverage
-htmlcov/
+htmlcov/.pypirc 
