@@ -105,7 +105,7 @@ python ml_trainer.py
 ```
 ╔═══════════════════════════════════════╗
 ║         PROTEUS v0.1.0                ║
-║   Zero-Day Static Analysis Engine    ║
+║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 
 [*] Analysis: suspicious.exe
