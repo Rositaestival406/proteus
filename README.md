@@ -1,11 +1,29 @@
 # PROTEUS
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Rust-1.83+-orange.svg" />
-  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" />
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
-  <img src="https://img.shields.io/badge/Status-Beta-yellow.svg" />
+  <img src="https://img.shields.io/badge/Rust-1.83+-orange.svg" alt="Rust" />
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
+  <img src="https://img.shields.io/badge/Status-Beta-yellow.svg" alt="Status" />
+  <img src="https://img.shields.io/github/stars/ChronoCoders/proteus?style=social" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/ChronoCoders/proteus?style=social" alt="Forks" />
+  <img src="https://img.shields.io/github/issues/ChronoCoders/proteus" alt="Issues" />
+  <img src="https://img.shields.io/github/release/ChronoCoders/proteus" alt="Release" />
 </p>
+
+<p align="center">
+  <strong>Advanced zero-day static analysis engine built with Rust and Python</strong>
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="https://github.com/ChronoCoders/proteus/wiki">Documentation</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
+
+---
 
 **Advanced Zero-Day Static Analysis Engine**
 
