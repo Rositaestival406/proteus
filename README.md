@@ -62,6 +62,8 @@ Proteus is a high-performance malware analysis tool built with Rust and Python, 
 - **Rust** 1.83+ ([Install](https://rustup.rs/))
 - **Python** 3.10+ ([Install](https://www.python.org/downloads/))
 - **Windows** 10/11 or **Linux**
+- **YARA** 4.5+ (Optional, required for Rust build - [Install Guide](install_yara_windows.ps1))
+- **MalwareBazaar API** (Optional, for dataset collection - included in code)
 
 ### Installation
 ```bash
@@ -71,7 +73,7 @@ cd proteus
 python -m venv venv
 venv\Scripts\activate
 
-pip install maturin numpy scikit-learn requests
+pip install -r requirements.txt
 
 maturin develop --release
 ```
@@ -98,6 +100,45 @@ python cli.py strings C:\path\to\sample.exe
 python cli.py dir C:\path\to\samples --output results.json
 ```
 
+### Collecting Real Malware Dataset
+
+**Collect malware samples from MalwareBazaar (default: 50 samples per tag, ~500 total):**
+```bash
+python malware_collector.py
+```
+
+**Collect with custom sample count:**
+```bash
+# Collect 100 samples per tag (~1000 total)
+python malware_collector.py --samples=100
+
+# Collect 20 samples per tag (~200 total)
+python malware_collector.py --samples=20
+```
+
+**Enable verbose debugging mode:**
+```bash
+python malware_collector.py --verbose
+```
+
+**Combine options:**
+```bash
+python malware_collector.py --samples=100 --verbose
+```
+
+**Features:**
+- ✅ Automatic AES-encrypted ZIP extraction
+- ✅ Retry logic for failed downloads (2 attempts per sample)
+- ✅ Real-time progress tracking
+- ✅ Graceful interrupt handling (Ctrl+C saves progress)
+- ✅ Metadata persistence (resume capability)
+- ✅ 10 malware categories: ransomware, trojan, rat, stealer, backdoor, loader, miner, banker, spyware, worm
+
+**Collection Statistics:**
+- Default: ~500 samples in ~17 minutes
+- Large: ~1000 samples in ~33 minutes
+- Custom: configurable via `--samples=N`
+
 ### Building Test Dataset
 ```bash
 python test_dataset_builder.py
@@ -113,7 +154,7 @@ python ml_trainer.py
 ### Example Output
 ```
 ╔═══════════════════════════════════════╗
-║         PROTEUS v0.1.1                ║
+║         PROTEUS v0.1.2                ║
 ║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 
@@ -157,10 +198,12 @@ proteus/
 │   ├── analyzer.py           # Main analyzer class
 │   └── ml_detector.py        # ML model integration
 ├── cli.py                    # Command-line interface
+├── malware_collector.py      # MalwareBazaar dataset collector
 ├── ml_trainer.py             # ML training pipeline
 ├── test_dataset_builder.py   # Dataset generation
+├── requirements.txt          # Python dependencies
 ├── Cargo.toml                # Rust dependencies
-└── pyproject.toml            # Python dependencies
+└── pyproject.toml            # Python project configuration
 ```
 
 ### Feature Extraction
@@ -251,12 +294,19 @@ Contributions are welcome! Please:
 
 ## 🗺️ Roadmap
 
+### v0.1.2 (Current) ✅
+- [x] Real malware dataset collection from MalwareBazaar
+- [x] AES-encrypted ZIP extraction support
+- [x] Configurable sample collection
+- [x] Progress tracking and retry logic
+- [x] Verbose debugging mode
+
 ### v0.2.0 (Planned)
 - [ ] YARA rule engine integration
 - [ ] Advanced packer detection (UPX, ASPack, Themida)
 - [ ] Digital signature validation
 - [ ] PE resource section analysis
-- [ ] Improved ML models with larger datasets
+- [ ] Retrain ML models with real-world dataset (500+ samples)
 
 ### v0.3.0 (Future)
 - [ ] HTML report generation
@@ -276,17 +326,18 @@ Contributions are welcome! Please:
 
 ## ⚠️ Limitations
 
-**Current Version (v0.1.1):**
-- Test dataset uses synthetic malware samples
-- ML models trained on limited data
+**Current Version (v0.1.2):**
+- ML models require training on collected real-world samples
 - No dynamic analysis capabilities
 - Windows-focused (PE analysis more mature than ELF)
+- Dataset collection requires MalwareBazaar API access
 
 **Recommended Use:**
 - Educational purposes
 - Research projects
-- Proof-of-concept deployments
+- Malware analysis training
 - Static analysis component in larger systems
+- Dataset collection for ML training
 
 ## 🔒 Security & Legal
 
@@ -318,6 +369,8 @@ Copyright (c) 2025 ChronoCoders
 - **PyO3** - Seamless Rust-Python integration
 - **Rayon** - Parallel processing made easy
 - **scikit-learn** - ML algorithms
+- **pyzipper** - AES-encrypted ZIP extraction
+- **MalwareBazaar** - Real-world malware sample repository
 
 ---
 
