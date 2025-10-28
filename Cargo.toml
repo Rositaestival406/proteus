@@ -10,7 +10,7 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 goblin = "0.8"
 sha2 = "0.10"
-pyo3 = { version = "0.22", features = ["extension-module"] }
+pyo3 = { version = "0.24", features = ["extension-module"] }
 rayon = "1.10"
 memmap2 = "0.9"
 yara = { version = "0.30.0", features = ["bundled-4_5_2"] }
