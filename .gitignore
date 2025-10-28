@@ -18,8 +18,12 @@ Cargo.lock
 test_dataset/
 samples/
 *.malware
-results.json
-*.json
+.pypirc
+malware_collector.py
+results*.json
+output*.json
+logs*.txt
+test_*.txt
 .vscode/
 .idea/
 *.swp
@@ -28,5 +32,6 @@ results.json
 .pytest_cache/
 .mypy_cache/
 .coverage
-htmlcov/.pypirc 
-.pypirc 
+htmlcov/
+**/*.rs.bk
+Thumbs.db
