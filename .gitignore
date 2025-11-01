@@ -1,37 +1,80 @@
+# Rust
 /target
+Cargo.lock
+*.exe
+*.dll
+*.dylib
+*.so
+**/*.rs.bk
+
+# Python
 /venv
 *.pyc
 __pycache__/
 *.pyo
 *.pyd
 .Python
-*.so
 *.egg-info/
 dist/
 build/
 *.whl
-Cargo.lock
-*.exe
-*.dll
-*.dylib
-.DS_Store
-test_dataset/
-samples/
-*.malware
-.pypirc
-malware_collector.py
-results*.json
-output*.json
-logs*.txt
-test_*.txt
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.pytest_cache/
-.mypy_cache/
-.coverage
-htmlcov/
-**/*.rs.bk
+.DS_Store
 Thumbs.db
+
+# Datasets & Samples (CRITICAL - DO NOT COMMIT MALWARE)
+test_dataset/
+dataset/
+samples/
+*.malware
+*.mal
+*.infected
+
+# Results & Logs
+results*.json
+output*.json
+logs*.txt
+test_*.txt
+
+# Models (Large files - use Git LFS if needed)
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+
+# Secrets (CRITICAL)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+secrets/
+credentials/
+.pypirc
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+malware_collector.py.bak
+api_keys.txt
+passwords.txt.pypirc 
