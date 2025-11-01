@@ -2,6 +2,40 @@
 
 All notable changes to Proteus will be documented in this file.
 
+## [0.1.3] - 2025-11-01
+
+### Added
+- **Configuration Management**: New `config.py` module for centralized configuration
+  - Environment variable support (`MALWAREBAZAAR_API_KEY`, `PROTEUS_*`)
+  - User config storage in `~/.proteus/config.json`
+  - API key persistence and secure storage
+- **Rate Limiter**: Thread-safe API rate limiting (`rate_limiter.py`)
+  - Configurable requests per time window
+  - Prevents API bans from excessive requests
+- **Security Validators**: Input validation (`validators.py`)
+  - Path traversal protection
+  - SHA256 hash validation
+  - File size and extension whitelisting
+  - Filename sanitization
+- **python-dotenv Integration**: Load API keys from `.env` files
+
+### Changed
+- **Malware Collector API Auth**: Fixed header from `API-KEY` to `Auth-Key`
+- Removed hardcoded API keys from source code
+- Improved error messages and exception handling
+- Enhanced type safety for mypy compliance
+
+### Fixed
+- **Critical**: API authentication 403 errors due to incorrect header
+- **Critical**: Invalid hardcoded API key
+- Type annotation issues in `config.py` for mypy
+- Environment variable loading in Windows
+
+### Security
+- Removed all hardcoded credentials
+- Added validators to prevent path traversal attacks
+- Implemented secure configuration storage
+
 ## [0.1.2] - 2025-01-28
 
 ### Added
