@@ -1,17 +1,24 @@
+bandit==1.8.6
 black==25.9.0
 Brotli==1.1.0
 certifi==2025.10.5
 charset-normalizer==3.4.4
 click==8.3.0
 colorama==0.4.6
+dotenv==0.9.9
 filelock==3.20.0
+flake8==7.3.0
 fsspec==2025.9.0
 idna==3.11
 inflate64==1.0.3
 Jinja2==3.1.6
 joblib==1.5.2
+mando==0.7.1
+markdown-it-py==4.0.0
 MarkupSafe==3.0.3
 maturin==1.9.6
+mccabe==0.7.0
+mdurl==0.1.2
 mpmath==1.3.0
 multivolumefile==0.2.3
 mypy==1.18.2
@@ -21,19 +28,28 @@ numpy==2.2.6
 packaging==25.0
 pathspec==0.12.1
 platformdirs==4.5.0
--e git+https://github.com/ChronoCoders/proteus.git@e5d80c8db60b142b598392e87d1ea706c1632dd8#egg=proteus
--e git+https://github.com/ChronoCoders/proteus.git@e5d80c8db60b142b598392e87d1ea706c1632dd8#egg=proteus_analyzer
+-e git+https://github.com/ChronoCoders/proteus.git@a75cd5bbb74cd427b3e90b22a98f45fb5bc11144#egg=proteus
+-e git+https://github.com/ChronoCoders/proteus.git@8dc5bb5221924caaeb0db89df5128316f7655fe4#egg=proteus_analyzer
 psutil==7.1.2
 py7zr==1.0.0
 pybcj==1.0.6
+pycodestyle==2.14.0
 pycryptodomex==3.23.0
+pyflakes==3.4.0
+Pygments==2.19.2
 pyppmd==1.2.0
+python-dotenv==1.2.1
 pytokens==0.2.0
+PyYAML==6.0.3
 pyzipper==0.3.6
 pyzstd==0.18.0
+radon==6.0.1
 requests==2.32.5
+rich==14.2.0
 scikit-learn==1.7.2
 scipy==1.15.3
+six==1.17.0
+stevedore==5.5.0
 sympy==1.14.0
 texttable==1.7.0
 threadpoolctl==3.6.0
