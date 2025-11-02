@@ -43,31 +43,82 @@ class ProteusMLTrainer:
             ]
 
             return np.array(features)
+        except KeyboardInterrupt:
+            raise
         except Exception as e:
-            print(f"[!] Error extracting features from {file_path}: {e}")
-            return None
+            error_msg = str(e)
+            # Expected errors - silently skip
+            if any(x in error_msg for x in [
+                "Unsupported file type",
+                "bad offset",
+                "bad magic",
+                "bad input",
+                "invalid utf8",
+                "Invalid PE",
+                "Invalid ELF",
+                "Malformed entity",
+                "Unable to extract",
+                "Cannot find name from rva",
+                "Probably cert_size"
+            ]):
+                return None
+            # Unexpected errors - log them
+            else:
+                print(f"[!] Unexpected error in {Path(file_path).name}: {e}")
+                return None
 
     def prepare_dataset(
         self, malicious_dir: str, clean_dir: str
     ) -> Tuple[np.ndarray, np.ndarray]:
         X = []
         y = []
+        
+        skipped_reasons = {
+            'unsupported': 0,
+            'corrupted': 0,
+            'other': 0
+        }
+        processed = 0
 
         print("[*] Processing malicious samples...")
         mal_path = Path(malicious_dir)
         if mal_path.exists():
             mal_files = list(mal_path.glob("**/*.*"))
-            # Filter for executable files
             mal_files = [
                 f for f in mal_files if f.suffix.lower() in [".exe", ".dll", ".malware"]
             ]
+            
+            total_files = len(mal_files)
+            print(f"    Found {total_files} malware files")
 
-            for file in mal_files:
-                features = self.extract_features(str(file))
-                if features is not None:
-                    X.append(features)
-                    y.append(1)
-                    print(f"    [+] {file.name}")
+            for idx, file in enumerate(mal_files, 1):
+                try:
+                    features = self.extract_features(str(file))
+                    if features is not None:
+                        X.append(features)
+                        y.append(1)
+                        processed += 1
+                        if processed % 20 == 0:
+                            print(f"    Progress: {processed}/{total_files} processed...")
+                    else:
+                        file_bytes = file.read_bytes()[:4] if file.exists() else b''
+                        if file_bytes[:2] == b'PK':
+                            skipped_reasons['corrupted'] += 1
+                        elif file_bytes[:2] in [b'MZ', b'\x7fELF']:
+                            skipped_reasons['corrupted'] += 1
+                        else:
+                            skipped_reasons['unsupported'] += 1
+                except KeyboardInterrupt:
+                    raise
+                except Exception as e:
+                    skipped_reasons['other'] += 1
+                    
+            print(f"\n    [✓] Malicious samples:")
+            print(f"        Processed: {processed}")
+            print(f"        Skipped - Unsupported format: {skipped_reasons['unsupported']}")
+            print(f"        Skipped - Corrupted/Invalid: {skipped_reasons['corrupted']}")
+            if skipped_reasons['other'] > 0:
+                print(f"        Skipped - Other errors: {skipped_reasons['other']}")
         else:
             print(f"[!] Malicious directory not found: {malicious_dir}")
 
@@ -75,12 +126,31 @@ class ProteusMLTrainer:
         clean_path = Path(clean_dir)
         if clean_path.exists():
             clean_files = list(clean_path.glob("**/*.exe"))
-            for file in clean_files:
-                features = self.extract_features(str(file))
-                if features is not None:
-                    X.append(features)
-                    y.append(0)
-                    print(f"    [+] {file.name}")
+            clean_processed = 0
+            clean_skipped = 0
+            total_clean = len(clean_files)
+            print(f"    Found {total_clean} clean files")
+            
+            for idx, file in enumerate(clean_files, 1):
+                try:
+                    features = self.extract_features(str(file))
+                    if features is not None:
+                        X.append(features)
+                        y.append(0)
+                        clean_processed += 1
+                        if clean_processed % 100 == 0:
+                            print(f"    Progress: {clean_processed}/{total_clean} processed...")
+                    else:
+                        clean_skipped += 1
+                except KeyboardInterrupt:
+                    raise
+                except Exception as e:
+                    clean_skipped += 1
+                    
+            print(f"\n    [✓] Clean samples:")
+            print(f"        Processed: {clean_processed}")
+            if clean_skipped > 0:
+                print(f"        Skipped: {clean_skipped}")
         else:
             print(f"[!] Clean directory not found: {clean_dir}")
 
@@ -226,24 +296,25 @@ def main():
 
     trainer = ProteusMLTrainer()
 
-    # Try test_dataset first (default location)
-    malicious_dir = "test_dataset/malicious"
+    # Try real malware dataset first (collected from MalwareBazaar)
+    malicious_dir = "dataset/malicious"
     clean_dir = "test_dataset/clean"
 
-    # Check if test_dataset exists
+    # Fallback to test_dataset if real malware not available
     if not Path(malicious_dir).exists():
-        print(f"[!] test_dataset not found, trying dataset/")
-        malicious_dir = "dataset/malicious"
-        clean_dir = "dataset/clean"
+        print(f"[!] Real malware dataset not found, using synthetic test_dataset")
+        malicious_dir = "test_dataset/malicious"
+        clean_dir = "test_dataset/clean"
 
     # Verify at least one directory exists
     if not Path(malicious_dir).exists() and not Path(clean_dir).exists():
         print(f"[!] ERROR: No dataset directories found!")
         print(f"[!] Tried:")
-        print(f"    - test_dataset/malicious")
-        print(f"    - dataset/malicious")
+        print(f"    - dataset/malicious (real malware)")
+        print(f"    - test_dataset/malicious (synthetic)")
         print(f"\n[*] Solution:")
-        print(f"    python test_dataset_builder.py")
+        print(f"    1. Collect real malware: python malware_collector.py")
+        print(f"    2. Or build test dataset: python test_dataset_builder.py")
         return
 
     print(f"[*] Using directories:")
