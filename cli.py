@@ -30,7 +30,7 @@ def print_banner():
     print(banner)
 
 
-def analyze_file_cmd(file_path: str, show_strings: bool = False):
+def analyze_file_cmd(file_path: str, show_strings: bool = False, use_ml: bool = False):
     if not Path(file_path).exists():
         print(f"[!] Error: File not found - {file_path}")
         return
@@ -52,6 +52,30 @@ def analyze_file_cmd(file_path: str, show_strings: bool = False):
             print(f"[!] Suspicious Indicators:")
             for indicator in result["indicators"]:
                 print(f"    - {indicator}")
+
+        if use_ml:
+            try:
+                from python.ml_detector import ProteusMLDetector
+                
+                print(f"\n[*] ML Analysis:")
+                detector = ProteusMLDetector()
+                detector.load_model()
+                
+                ml_result = detector.predict(file_path)
+                
+                if "error" in ml_result:
+                    print(f"[!] ML Error: {ml_result['error']}")
+                else:
+                    print(f"[+] ML Prediction: {ml_result['prediction'].upper()}")
+                    print(f"[+] Confidence: {ml_result['confidence']*100:.2f}%")
+                    print(f"[+] Probabilities:")
+                    print(f"    Clean: {ml_result['probabilities']['clean']*100:.2f}%")
+                    print(f"    Malicious: {ml_result['probabilities']['malicious']*100:.2f}%")
+                    if ml_result['is_anomaly']:
+                        print(f"[!] Anomaly detected (score: {ml_result['anomaly_score']:.2f})")
+                        
+            except Exception as e:
+                print(f"[!] ML Analysis failed: {e}")
 
         if show_strings:
             print(f"\n[*] String Analysis:")
@@ -164,7 +188,7 @@ def main():
 
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  python cli.py file <path> [--strings]")
+        print("  python cli.py file <path> [--strings] [--ml]")
         print("  python cli.py dir <path> [--output results.json]")
         print("  python cli.py strings <path>")
         sys.exit(1)
@@ -176,7 +200,8 @@ def main():
             print("[!] Error: File path required")
             sys.exit(1)
         show_strings = "--strings" in sys.argv
-        analyze_file_cmd(sys.argv[2], show_strings)
+        use_ml = "--ml" in sys.argv
+        analyze_file_cmd(sys.argv[2], show_strings, use_ml)
 
     elif command == "dir":
         if len(sys.argv) < 3:
