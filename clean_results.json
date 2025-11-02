@@ -1,0 +1,5998 @@
+[
+  {
+    "path": "test_dataset\\clean\\agentactivationruntimestarter.exe",
+    "type": "PE",
+    "entropy": 4.964461822517387,
+    "score": 11.170039100664118,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\AggregatorHost.exe",
+    "type": "PE",
+    "entropy": 6.336533999023436,
+    "score": 21.757201497802733,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\aitstatic.exe",
+    "type": "PE",
+    "entropy": 7.218301765771292,
+    "score": 57.0,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\alg.exe",
+    "type": "PE",
+    "entropy": 5.9820782426692825,
+    "score": 34.45967604600588,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\AppHostRegistrationVerifier.exe",
+    "type": "PE",
+    "entropy": 5.887049349889677,
+    "score": 20.74586103725177,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\appidcertstorecheck.exe",
+    "type": "PE",
+    "entropy": 5.82326274462647,
+    "score": 20.602341175409556,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\appidpolicyconverter.exe",
+    "type": "PE",
+    "entropy": 5.820223886678874,
+    "score": 13.095503745027466,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\appidtel.exe",
+    "type": "PE",
+    "entropy": 5.092606778990553,
+    "score": 11.458365252728743,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ApplicationFrameHost.exe",
+    "type": "PE",
+    "entropy": 6.20769025280859,
+    "score": 21.467303068819326,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ApplyTrustOffline.exe",
+    "type": "PE",
+    "entropy": 5.381231889100354,
+    "score": 33.1077717504758,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "VirtualAlloc",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ApproveChildRequest.exe",
+    "type": "PE",
+    "entropy": 6.757549779801275,
+    "score": 22.704487004552867,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\appverif.exe",
+    "type": "PE",
+    "entropy": 5.583069830748512,
+    "score": 20.06190711918415,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ARP.EXE",
+    "type": "PE",
+    "entropy": 5.257293254820635,
+    "score": 19.32890982334643,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\at.exe",
+    "type": "PE",
+    "entropy": 5.33149458014834,
+    "score": 11.995862805333765,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\AtBroker.exe",
+    "type": "PE",
+    "entropy": 5.844371580656484,
+    "score": 28.149836056477092,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\attrib.exe",
+    "type": "PE",
+    "entropy": 5.320285681518754,
+    "score": 11.970642783417196,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\audiodg.exe",
+    "type": "PE",
+    "entropy": 6.37120105499067,
+    "score": 31.335202373729008,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\auditpol.exe",
+    "type": "PE",
+    "entropy": 5.364072956323265,
+    "score": 12.069164151727346,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\AuthHost.exe",
+    "type": "PE",
+    "entropy": 6.094545061785521,
+    "score": 13.712726389017421,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\autochk.exe",
+    "type": "PE",
+    "entropy": 5.960293210877883,
+    "score": 13.410659724475238,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\autoconv.exe",
+    "type": "PE",
+    "entropy": 5.956473108278724,
+    "score": 13.402064493627128,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\autofmt.exe",
+    "type": "PE",
+    "entropy": 5.9301830093738666,
+    "score": 13.3429117710912,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\AxInstUI.exe",
+    "type": "PE",
+    "entropy": 4.590091805958794,
+    "score": 10.327706563407286,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\backgroundTaskHost.exe",
+    "type": "PE",
+    "entropy": 6.178559222876367,
+    "score": 13.901758251471824,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\BackgroundTransferHost.exe",
+    "type": "PE",
+    "entropy": 4.747372583443724,
+    "score": 10.68158831274838,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bash.exe",
+    "type": "PE",
+    "entropy": 5.950086472545126,
+    "score": 20.887694563226532,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bcdboot.exe",
+    "type": "PE",
+    "entropy": 5.744709843104428,
+    "score": 20.425597146984963,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bcdedit.exe",
+    "type": "PE",
+    "entropy": 5.457341583862867,
+    "score": 19.77901856369145,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\BdeUISrv.exe",
+    "type": "PE",
+    "entropy": 5.762768043611615,
+    "score": 20.466228098126134,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bdeunlock.exe",
+    "type": "PE",
+    "entropy": 6.900876192298855,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\BioIso.exe",
+    "type": "PE",
+    "entropy": 6.310656699299616,
+    "score": 23.698977573424138,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\BitLockerDeviceEncryption.exe",
+    "type": "PE",
+    "entropy": 6.374839033981104,
+    "score": 21.843387826457484,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\BitLockerWizardElev.exe",
+    "type": "PE",
+    "entropy": 6.94531140496239,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bitsadmin.exe",
+    "type": "PE",
+    "entropy": 5.429093653518461,
+    "score": 19.715460720416537,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bootcfg.exe",
+    "type": "PE",
+    "entropy": 5.8782971970161535,
+    "score": 13.226168693286345,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bootim.exe",
+    "type": "PE",
+    "entropy": 5.526016390292658,
+    "score": 19.93353687815848,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bootsect.exe",
+    "type": "PE",
+    "entropy": 5.417118784487447,
+    "score": 19.688517265096756,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bridgeunattend.exe",
+    "type": "PE",
+    "entropy": 5.197376588688344,
+    "score": 11.694097324548773,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\browserexport.exe",
+    "type": "PE",
+    "entropy": 6.173689575625777,
+    "score": 21.390801545158,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\browser_broker.exe",
+    "type": "PE",
+    "entropy": 6.148326647925847,
+    "score": 21.33373495783316,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\bthudtask.exe",
+    "type": "PE",
+    "entropy": 4.2975093749532105,
+    "score": 9.669396093644723,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ByteCodeGenerator.exe",
+    "type": "PE",
+    "entropy": 6.007460182055146,
+    "score": 21.016785409624077,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cacls.exe",
+    "type": "PE",
+    "entropy": 5.723586001498451,
+    "score": 12.878068503371516,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\calc.exe",
+    "type": "PE",
+    "entropy": 3.9112979273264497,
+    "score": 8.80042033648451,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CameraSettingsUIHost.exe",
+    "type": "PE",
+    "entropy": 6.337663424023389,
+    "score": 14.259742704052625,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CastSrv.exe",
+    "type": "PE",
+    "entropy": 6.222704289361695,
+    "score": 14.001084651063811,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CertEnrollCtrl.exe",
+    "type": "PE",
+    "entropy": 5.242617542605347,
+    "score": 19.29588947086203,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\certreq.exe",
+    "type": "PE",
+    "entropy": 6.113184519382747,
+    "score": 28.754665168611183,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\certutil.exe",
+    "type": "PE",
+    "entropy": 6.15280251218998,
+    "score": 34.843805652427456,
+    "indicators": [
+      "VirtualAlloc",
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\changepk.exe",
+    "type": "PE",
+    "entropy": 5.5773295514592425,
+    "score": 20.048991490783294,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\charmap.exe",
+    "type": "PE",
+    "entropy": 6.678532649458559,
+    "score": 30.026698461281754,
+    "indicators": [
+      "GetProcAddress",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CheckNetIsolation.exe",
+    "type": "PE",
+    "entropy": 5.280171210161195,
+    "score": 11.880385222862689,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\chkdsk.exe",
+    "type": "PE",
+    "entropy": 5.305076570458905,
+    "score": 11.936422283532535,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\chkntfs.exe",
+    "type": "PE",
+    "entropy": 5.265499441295237,
+    "score": 11.847373742914284,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\choice.exe",
+    "type": "PE",
+    "entropy": 5.722008052637117,
+    "score": 12.874518118433512,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CIDiag.exe",
+    "type": "PE",
+    "entropy": 5.249671485876604,
+    "score": 11.811760843222359,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cipher.exe",
+    "type": "PE",
+    "entropy": 5.750134243939088,
+    "score": 27.93780204886295,
+    "indicators": [
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cleanmgr.exe",
+    "type": "PE",
+    "entropy": 6.150900572134582,
+    "score": 21.33952628730281,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cliconfg.exe",
+    "type": "PE",
+    "entropy": 4.814839649547492,
+    "score": 18.333389211481858,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\clip.exe",
+    "type": "PE",
+    "entropy": 5.65491278629389,
+    "score": 12.723553769161251,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\clipesu.exe",
+    "type": "PE",
+    "entropy": 6.291961370813074,
+    "score": 21.656913084329418,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ClipESUConsumer.exe",
+    "type": "PE",
+    "entropy": 6.279649360049463,
+    "score": 21.62921106011129,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ClipRenew.exe",
+    "type": "PE",
+    "entropy": 6.392124408281206,
+    "score": 21.88227991863271,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ClipUp.exe",
+    "type": "PE",
+    "entropy": 7.336323444704156,
+    "score": 63.0,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "MALICIOUS"
+  },
+  {
+    "path": "test_dataset\\clean\\CloudExperienceHostBroker.exe",
+    "type": "PE",
+    "entropy": 6.108891769024983,
+    "score": 21.245006480306213,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CloudNotifications.exe",
+    "type": "PE",
+    "entropy": 6.120764927858797,
+    "score": 21.271721087682295,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cmd.exe",
+    "type": "PE",
+    "entropy": 6.135565984892662,
+    "score": 34.80502346600849,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "ReadProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cmdkey.exe",
+    "type": "PE",
+    "entropy": 5.056475137335891,
+    "score": 11.377069059005754,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cmdl32.exe",
+    "type": "PE",
+    "entropy": 5.896924812228912,
+    "score": 20.76808082751505,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cmmon32.exe",
+    "type": "PE",
+    "entropy": 5.4098887014289705,
+    "score": 27.172249578215183,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cmstp.exe",
+    "type": "PE",
+    "entropy": 5.713480170628559,
+    "score": 20.355330383914257,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cofire.exe",
+    "type": "PE",
+    "entropy": 5.416394027060693,
+    "score": 19.686886560886556,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\colorcpl.exe",
+    "type": "PE",
+    "entropy": 7.212393255652123,
+    "score": 42.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\comp.exe",
+    "type": "PE",
+    "entropy": 5.358278646242103,
+    "score": 12.056126954044732,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\compact.exe",
+    "type": "PE",
+    "entropy": 5.742028619165766,
+    "score": 20.419564393122975,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CompatTelRunner.exe",
+    "type": "PE",
+    "entropy": 6.354648074299711,
+    "score": 21.79795816717435,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CompMgmtLauncher.exe",
+    "type": "PE",
+    "entropy": 5.850584337329456,
+    "score": 34.16381475899128,
+    "indicators": [
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CompPkgSrv.exe",
+    "type": "PE",
+    "entropy": 6.1433499789324,
+    "score": 21.3225374525979,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ComputerDefaults.exe",
+    "type": "PE",
+    "entropy": 6.195935080549569,
+    "score": 21.440853931236532,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\conhost.exe",
+    "type": "PE",
+    "entropy": 6.386429613919276,
+    "score": 29.36946663131837,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\consent.exe",
+    "type": "PE",
+    "entropy": 6.000713155789065,
+    "score": 21.001604600525397,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\control.exe",
+    "type": "PE",
+    "entropy": 6.7390611222881525,
+    "score": 22.662887525148342,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\convert.exe",
+    "type": "PE",
+    "entropy": 5.330151862914531,
+    "score": 11.992841691557693,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\convertvhd.exe",
+    "type": "PE",
+    "entropy": 5.541790753622854,
+    "score": 19.969029195651423,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\coredpussvr.exe",
+    "type": "PE",
+    "entropy": 5.773678716645218,
+    "score": 20.490777112451738,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CredentialEnrollmentManager.exe",
+    "type": "PE",
+    "entropy": 6.327732202346735,
+    "score": 29.237397455280153,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CredentialUIBroker.exe",
+    "type": "PE",
+    "entropy": 6.3359611926048105,
+    "score": 29.255912683360823,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\credwiz.exe",
+    "type": "PE",
+    "entropy": 5.293575892538563,
+    "score": 19.410545758211764,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cscript.exe",
+    "type": "PE",
+    "entropy": 5.784884473711858,
+    "score": 20.515990065851682,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\csrss.exe",
+    "type": "PE",
+    "entropy": 6.38086208051625,
+    "score": 14.356939681161561,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ctfmon.exe",
+    "type": "PE",
+    "entropy": 4.3174170837040515,
+    "score": 9.714188438334114,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cttune.exe",
+    "type": "PE",
+    "entropy": 6.050337208125579,
+    "score": 13.613258718282552,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\cttunesvr.exe",
+    "type": "PE",
+    "entropy": 5.768289868083569,
+    "score": 20.478652203188027,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\curl.exe",
+    "type": "PE",
+    "entropy": 6.518806257636396,
+    "score": 22.16731407968189,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\CustomInstallExec.exe",
+    "type": "PE",
+    "entropy": 6.046402661028357,
+    "score": 21.104405987313804,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\d3dconfig.exe",
+    "type": "PE",
+    "entropy": 4.711017606070439,
+    "score": 18.099789613658487,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dasHost.exe",
+    "type": "PE",
+    "entropy": 5.753161514378204,
+    "score": 27.944613407350957,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DataExchangeHost.exe",
+    "type": "PE",
+    "entropy": 6.202208043897708,
+    "score": 34.95496809876984,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DataStoreCacheDumpTool.exe",
+    "type": "PE",
+    "entropy": 6.128431889061895,
+    "score": 21.288971750389265,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DataUsageLiveTileTask.exe",
+    "type": "PE",
+    "entropy": 6.100164979308128,
+    "score": 21.225371203443288,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dccw.exe",
+    "type": "PE",
+    "entropy": 5.872531538493693,
+    "score": 28.213195961610808,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dcomcnfg.exe",
+    "type": "PE",
+    "entropy": 4.69931676615361,
+    "score": 10.573462723845623,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ddodiag.exe",
+    "type": "PE",
+    "entropy": 5.093736950821614,
+    "score": 11.460908139348632,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Defrag.exe",
+    "type": "PE",
+    "entropy": 7.08022391629393,
+    "score": 31.5,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\deploymentcsphelper.exe",
+    "type": "PE",
+    "entropy": 5.6085702352998865,
+    "score": 12.619283029424745,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\desktopimgdownldr.exe",
+    "type": "PE",
+    "entropy": 5.9528827901343515,
+    "score": 20.89398627780229,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DeviceCensus.exe",
+    "type": "PE",
+    "entropy": 6.019635192501266,
+    "score": 28.544179183127845,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DeviceCredentialDeployment.exe",
+    "type": "PE",
+    "entropy": 5.943718567355547,
+    "score": 20.87336677654998,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DeviceEject.exe",
+    "type": "PE",
+    "entropy": 5.161227217036393,
+    "score": 19.112761238331885,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DeviceEnroller.exe",
+    "type": "PE",
+    "entropy": 6.003739950101715,
+    "score": 28.508414887728858,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DevicePairingWizard.exe",
+    "type": "PE",
+    "entropy": 5.654701407322371,
+    "score": 20.223078166475332,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DeviceProperties.exe",
+    "type": "PE",
+    "entropy": 7.2521014917652575,
+    "score": 49.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DFDWiz.exe",
+    "type": "PE",
+    "entropy": 5.72094397389887,
+    "score": 20.372123941272456,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dfrgui.exe",
+    "type": "PE",
+    "entropy": 6.075919998179988,
+    "score": 21.170819995904974,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dialer.exe",
+    "type": "PE",
+    "entropy": 5.479874072015904,
+    "score": 12.329716662035784,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\directxdatabaseupdater.exe",
+    "type": "PE",
+    "entropy": 6.3423338818173765,
+    "score": 21.770251234089095,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\diskpart.exe",
+    "type": "PE",
+    "entropy": 6.0861169618218245,
+    "score": 13.693763164099105,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\diskperf.exe",
+    "type": "PE",
+    "entropy": 5.322762311124489,
+    "score": 11.976215200030099,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\diskraid.exe",
+    "type": "PE",
+    "entropy": 6.346193793804439,
+    "score": 14.278936036059985,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DiskSnapshot.exe",
+    "type": "PE",
+    "entropy": 5.9205411850213565,
+    "score": 20.82121766629805,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Dism.exe",
+    "type": "PE",
+    "entropy": 5.727275854662708,
+    "score": 20.38637067299109,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dispdiag.exe",
+    "type": "PE",
+    "entropy": 5.794423494494624,
+    "score": 20.537452862612902,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DisplaySwitch.exe",
+    "type": "PE",
+    "entropy": 1.925843715093054,
+    "score": 19.33314835895937,
+    "indicators": [
+      "GetAsyncKeyState",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\djoin.exe",
+    "type": "PE",
+    "entropy": 5.092885880435466,
+    "score": 18.9589932309798,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dllhost.exe",
+    "type": "PE",
+    "entropy": 6.27906526685409,
+    "score": 14.127896850421703,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dllhst3g.exe",
+    "type": "PE",
+    "entropy": 4.746005988610025,
+    "score": 10.678513474372556,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dmcertinst.exe",
+    "type": "PE",
+    "entropy": 5.999236597648107,
+    "score": 20.99828234470824,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dmcfghost.exe",
+    "type": "PE",
+    "entropy": 5.171738184715642,
+    "score": 19.136410915610195,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dmclient.exe",
+    "type": "PE",
+    "entropy": 5.908679820548385,
+    "score": 20.794529596233865,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DmNotificationBroker.exe",
+    "type": "PE",
+    "entropy": 5.276173910764949,
+    "score": 11.871391299221134,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DmOmaCpMo.exe",
+    "type": "PE",
+    "entropy": 5.547992588220599,
+    "score": 19.98298332349635,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dnscacheugc.exe",
+    "type": "PE",
+    "entropy": 5.313182161059935,
+    "score": 19.45465986238485,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\doskey.exe",
+    "type": "PE",
+    "entropy": 5.245630692600672,
+    "score": 11.802669058351512,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dpapimig.exe",
+    "type": "PE",
+    "entropy": 5.923671368506341,
+    "score": 13.328260579139265,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DpiScaling.exe",
+    "type": "PE",
+    "entropy": 7.076648653731147,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dplaysvr.exe",
+    "type": "PE",
+    "entropy": 4.3358588850360205,
+    "score": 9.755682491331045,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dpnsvr.exe",
+    "type": "PE",
+    "entropy": 4.117343940344365,
+    "score": 9.26402386577482,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\driverquery.exe",
+    "type": "PE",
+    "entropy": 5.782738421695354,
+    "score": 20.511161448814548,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\drvinst.exe",
+    "type": "PE",
+    "entropy": 6.348236998190599,
+    "score": 29.283533245928844,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DsmUserTask.exe",
+    "type": "PE",
+    "entropy": 5.074882351266811,
+    "score": 11.418485290350324,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dsregcmd.exe",
+    "type": "PE",
+    "entropy": 5.895262020886656,
+    "score": 28.264339546994975,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dstokenclean.exe",
+    "type": "PE",
+    "entropy": 4.532395053076132,
+    "score": 10.197888869421297,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dtdump.exe",
+    "type": "PE",
+    "entropy": 6.447223558885365,
+    "score": 22.00625300749207,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DTUHandler.exe",
+    "type": "PE",
+    "entropy": 6.066375981536836,
+    "score": 21.14934595845788,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dusmtask.exe",
+    "type": "PE",
+    "entropy": 5.701817023529429,
+    "score": 20.329088302941216,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dvdplay.exe",
+    "type": "PE",
+    "entropy": 4.559151423830164,
+    "score": 10.258090703617869,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dwm.exe",
+    "type": "PE",
+    "entropy": 5.79295449178605,
+    "score": 20.534147606518612,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DWWIN.EXE",
+    "type": "PE",
+    "entropy": 6.116044943528902,
+    "score": 34.761101122940026,
+    "indicators": [
+      "WriteProcessMemory",
+      "VirtualAlloc",
+      "ReadProcessMemory",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DXCap.exe",
+    "type": "PE",
+    "entropy": 5.550447385216091,
+    "score": 42.4885066167362,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc",
+      "ReadProcessMemory",
+      "VirtualProtect",
+      "WriteProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\DXCpl.exe",
+    "type": "PE",
+    "entropy": 4.440775405449969,
+    "score": 17.49174466226243,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dxdiag.exe",
+    "type": "PE",
+    "entropy": 5.845718764438647,
+    "score": 13.152867219986957,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\dxgiadaptercache.exe",
+    "type": "PE",
+    "entropy": 6.317627435308857,
+    "score": 29.214661729444927,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Dxpserver.exe",
+    "type": "PE",
+    "entropy": 5.897559736628323,
+    "score": 28.26950940741373,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Eap3Host.exe",
+    "type": "PE",
+    "entropy": 4.872909804280343,
+    "score": 10.96404705963077,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EaseOfAccessDialog.exe",
+    "type": "PE",
+    "entropy": 5.958844675239768,
+    "score": 34.407400519289475,
+    "indicators": [
+      "VirtualProtect",
+      "OpenProcess",
+      "GetProcAddress",
+      "ReadProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\easinvoker.exe",
+    "type": "PE",
+    "entropy": 5.978485582274556,
+    "score": 20.95159256011775,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EASPolicyManagerBrokerHost.exe",
+    "type": "PE",
+    "entropy": 5.925328160488115,
+    "score": 20.831988361098254,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EDPCleanup.exe",
+    "type": "PE",
+    "entropy": 5.9990590524922816,
+    "score": 28.49788286810763,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\edpnotify.exe",
+    "type": "PE",
+    "entropy": 5.753813414690889,
+    "score": 20.446080183054498,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EduPrintProv.exe",
+    "type": "PE",
+    "entropy": 5.906397486133397,
+    "score": 20.78939434380014,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\efsui.exe",
+    "type": "PE",
+    "entropy": 4.960051851897362,
+    "score": 11.160116666769065,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EhStorAuthn.exe",
+    "type": "PE",
+    "entropy": 6.210926029098041,
+    "score": 13.97458356547059,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EM.exe",
+    "type": "PE",
+    "entropy": 5.81461661229072,
+    "score": 20.58288737765412,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\EoAExperiences.exe",
+    "type": "PE",
+    "entropy": 6.163850337635833,
+    "score": 21.368663259680623,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\esentutl.exe",
+    "type": "PE",
+    "entropy": 5.940940402506061,
+    "score": 34.367115905638634,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\eudcedit.exe",
+    "type": "PE",
+    "entropy": 6.373394689588463,
+    "score": 21.84013805157404,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\eventcreate.exe",
+    "type": "PE",
+    "entropy": 5.712315138997255,
+    "score": 12.852709062743823,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\eventvwr.exe",
+    "type": "PE",
+    "entropy": 6.7614859283084625,
+    "score": 15.21334333869404,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\expand.exe",
+    "type": "PE",
+    "entropy": 5.372591041544789,
+    "score": 27.088329843475776,
+    "indicators": [
+      "VirtualProtect",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\explorer.exe",
+    "type": "PE",
+    "entropy": 6.400083795958531,
+    "score": 44.40018854090669,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\extrac32.exe",
+    "type": "PE",
+    "entropy": 5.833198511475204,
+    "score": 20.62469665081921,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fc.exe",
+    "type": "PE",
+    "entropy": 5.420985553492469,
+    "score": 12.197217495358053,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fhmanagew.exe",
+    "type": "PE",
+    "entropy": 6.702734145202947,
+    "score": 15.081151826706629,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\FileHistory.exe",
+    "type": "PE",
+    "entropy": 6.056851253811743,
+    "score": 21.127915321076422,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\find.exe",
+    "type": "PE",
+    "entropy": 5.105058997262581,
+    "score": 11.486382743840807,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\findstr.exe",
+    "type": "PE",
+    "entropy": 5.626311710107985,
+    "score": 12.659201347742966,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\finger.exe",
+    "type": "PE",
+    "entropy": 4.8723794594638505,
+    "score": 10.962853783793664,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fixmapi.exe",
+    "type": "PE",
+    "entropy": 5.071883112881222,
+    "score": 18.91173700398275,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fltMC.exe",
+    "type": "PE",
+    "entropy": 5.405119899189685,
+    "score": 12.161519773176792,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fodhelper.exe",
+    "type": "PE",
+    "entropy": 5.876977574715816,
+    "score": 20.723199543110585,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Fondue.exe",
+    "type": "PE",
+    "entropy": 7.100797108518725,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fontdrvhost.exe",
+    "type": "PE",
+    "entropy": 6.563601419703238,
+    "score": 22.268103194332284,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fontview.exe",
+    "type": "PE",
+    "entropy": 6.842177159583634,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\forfiles.exe",
+    "type": "PE",
+    "entropy": 5.829491342478126,
+    "score": 13.116355520575784,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fsavailux.exe",
+    "type": "PE",
+    "entropy": 5.116358238436732,
+    "score": 19.011806036482646,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\FsIso.exe",
+    "type": "PE",
+    "entropy": 6.301883373528143,
+    "score": 14.179237590438321,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fsquirt.exe",
+    "type": "PE",
+    "entropy": 5.488475359509168,
+    "score": 19.84906955889563,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fsutil.exe",
+    "type": "PE",
+    "entropy": 6.146933166073148,
+    "score": 28.830599623664583,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ftp.exe",
+    "type": "PE",
+    "entropy": 5.786561842400671,
+    "score": 13.019764145401508,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\fvenotify.exe",
+    "type": "PE",
+    "entropy": 6.946049617777558,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\FXSCOVER.exe",
+    "type": "PE",
+    "entropy": 5.739963512453882,
+    "score": 20.414917903021234,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\FXSSVC.exe",
+    "type": "PE",
+    "entropy": 6.178554012103974,
+    "score": 21.40174652723394,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\FXSUNATD.exe",
+    "type": "PE",
+    "entropy": 5.195177696533189,
+    "score": 19.189149817199674,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\GameBarPresenceWriter.exe",
+    "type": "PE",
+    "entropy": 6.092784361612289,
+    "score": 21.208764813627653,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\GameInputSvc.exe",
+    "type": "PE",
+    "entropy": 6.281214592365734,
+    "score": 21.632732832822903,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\GamePanel.exe",
+    "type": "PE",
+    "entropy": 6.154991197458926,
+    "score": 34.84873019428258,
+    "indicators": [
+      "OpenProcess",
+      "VirtualProtect",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\GenValObj.exe",
+    "type": "PE",
+    "entropy": 7.542440097119026,
+    "score": 72.0,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "VirtualAlloc"
+    ],
+    "verdict": "MALICIOUS"
+  },
+  {
+    "path": "test_dataset\\clean\\getmac.exe",
+    "type": "PE",
+    "entropy": 5.734031113536585,
+    "score": 12.901570005457316,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\gpresult.exe",
+    "type": "PE",
+    "entropy": 6.118964898375368,
+    "score": 21.267671021344576,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\gpupdate.exe",
+    "type": "PE",
+    "entropy": 5.3340533659477165,
+    "score": 12.001620073382362,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\grpconv.exe",
+    "type": "PE",
+    "entropy": 5.794303649255574,
+    "score": 20.53718321082504,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\hcsdiag.exe",
+    "type": "PE",
+    "entropy": 6.159129880417434,
+    "score": 21.358042230939226,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\hdwwiz.exe",
+    "type": "PE",
+    "entropy": 5.279962536527403,
+    "score": 19.379915707186655,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\help.exe",
+    "type": "PE",
+    "entropy": 4.594426040336193,
+    "score": 10.337458590756436,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\hh.exe",
+    "type": "PE",
+    "entropy": 4.718993384324741,
+    "score": 18.117735114730664,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\hnsdiag.exe",
+    "type": "PE",
+    "entropy": 6.170965418690275,
+    "score": 21.384672192053117,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\HOSTNAME.EXE",
+    "type": "PE",
+    "entropy": 4.6770908886367355,
+    "score": 10.523454499432654,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\hvax64.exe",
+    "type": "PE",
+    "entropy": 6.437686966333137,
+    "score": 14.48479567424956,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\hvix64.exe",
+    "type": "PE",
+    "entropy": 6.452110296476107,
+    "score": 14.51724816707124,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ibtsiva.exe",
+    "type": "PE",
+    "entropy": 6.265147065834619,
+    "score": 35.09658089812789,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\icacls.exe",
+    "type": "PE",
+    "entropy": 5.6525779051114915,
+    "score": 12.718300286500856,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\IcsEntitlementHost.exe",
+    "type": "PE",
+    "entropy": 5.54514784822196,
+    "score": 19.97658265849941,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\icsunattend.exe",
+    "type": "PE",
+    "entropy": 5.083271348181592,
+    "score": 11.437360533408581,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ie4uinit.exe",
+    "type": "PE",
+    "entropy": 6.116146789439824,
+    "score": 21.261330276239605,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ie4ushowIE.exe",
+    "type": "PE",
+    "entropy": 5.89527698667463,
+    "score": 20.764373220017916,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\IESettingSync.exe",
+    "type": "PE",
+    "entropy": 6.308436379310797,
+    "score": 21.693981853449294,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ieUnatt.exe",
+    "type": "PE",
+    "entropy": 5.649515208563803,
+    "score": 33.71140921926856,
+    "indicators": [
+      "OpenProcess",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\iexpress.exe",
+    "type": "PE",
+    "entropy": 6.730026117409767,
+    "score": 22.642558764171973,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\immersivetpmvscmgrsvr.exe",
+    "type": "PE",
+    "entropy": 6.170904177392813,
+    "score": 21.384534399133827,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\InfDefaultInstall.exe",
+    "type": "PE",
+    "entropy": 5.083066292342804,
+    "score": 11.436899157771308,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\InputSwitchToastHandler.exe",
+    "type": "PE",
+    "entropy": 4.497820726619347,
+    "score": 17.620096634893528,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\instnm.exe",
+    "type": "PE",
+    "entropy": 4.628484516922139,
+    "score": 10.414090163074812,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ipconfig.exe",
+    "type": "PE",
+    "entropy": 5.481976382099447,
+    "score": 19.834446859723755,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\iscsicli.exe",
+    "type": "PE",
+    "entropy": 5.79482912657361,
+    "score": 13.038365534790623,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\iscsicpl.exe",
+    "type": "PE",
+    "entropy": 4.616644929201666,
+    "score": 10.387451090703747,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\isoburn.exe",
+    "type": "PE",
+    "entropy": 6.2976256521927105,
+    "score": 29.1696577174336,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\klist.exe",
+    "type": "PE",
+    "entropy": 5.890104981449167,
+    "score": 28.252736208260625,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ksetup.exe",
+    "type": "PE",
+    "entropy": 5.5230685577729295,
+    "score": 12.426904254989092,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ktmutil.exe",
+    "type": "PE",
+    "entropy": 5.030619424853515,
+    "score": 11.318893705920408,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\label.exe",
+    "type": "PE",
+    "entropy": 5.144006169866611,
+    "score": 11.574013882199873,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LanguageComponentsInstallerComHandler.exe",
+    "type": "PE",
+    "entropy": 5.661087033676362,
+    "score": 20.237445825771815,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LaunchTM.exe",
+    "type": "PE",
+    "entropy": 4.637717941772729,
+    "score": 10.434865368988637,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LaunchWinApp.exe",
+    "type": "PE",
+    "entropy": 5.636778379618829,
+    "score": 27.682751354142365,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LegacyNetUXHost.exe",
+    "type": "PE",
+    "entropy": 6.016924872318667,
+    "score": 21.038080962716997,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LicenseManagerShellext.exe",
+    "type": "PE",
+    "entropy": 5.665769097461418,
+    "score": 20.247980469288187,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\licensingdiag.exe",
+    "type": "PE",
+    "entropy": 6.274573489099627,
+    "score": 21.61779035047416,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LicensingUI.exe",
+    "type": "PE",
+    "entropy": 6.578205066561879,
+    "score": 22.300961399764226,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LocationNotificationWindows.exe",
+    "type": "PE",
+    "entropy": 5.985652395447215,
+    "score": 20.967717889756234,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Locator.exe",
+    "type": "PE",
+    "entropy": 4.394753061143077,
+    "score": 9.888194387571923,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LockAppHost.exe",
+    "type": "PE",
+    "entropy": 6.29955108024219,
+    "score": 21.673989930544927,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LockScreenContentServer.exe",
+    "type": "PE",
+    "entropy": 6.280728312138934,
+    "score": 14.131638702312602,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\lodctr.exe",
+    "type": "PE",
+    "entropy": 5.679859456902662,
+    "score": 12.77968377803099,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\logagent.exe",
+    "type": "PE",
+    "entropy": 6.077398831853894,
+    "score": 34.67414737167126,
+    "indicators": [
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\logman.exe",
+    "type": "PE",
+    "entropy": 5.525747622713829,
+    "score": 12.432932151106115,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LogonUI.exe",
+    "type": "PE",
+    "entropy": 4.9706691827018075,
+    "score": 11.184005661079066,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\lpkinstall.exe",
+    "type": "PE",
+    "entropy": 5.47187892629513,
+    "score": 12.311727584164041,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\lpksetup.exe",
+    "type": "PE",
+    "entropy": 6.538256342535598,
+    "score": 35.71107677070509,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualProtect",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\lpremove.exe",
+    "type": "PE",
+    "entropy": 6.02190224725428,
+    "score": 21.049280056322132,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\LsaIso.exe",
+    "type": "PE",
+    "entropy": 6.07741268562537,
+    "score": 34.67417854265708,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\lsass.exe",
+    "type": "PE",
+    "entropy": 5.881597956787218,
+    "score": 20.73359540277124,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Magnify.exe",
+    "type": "PE",
+    "entropy": 6.3084771753328805,
+    "score": 35.19407364449898,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualProtect",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\makecab.exe",
+    "type": "PE",
+    "entropy": 6.152604114074848,
+    "score": 21.343359256668407,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\manage-bde.exe",
+    "type": "PE",
+    "entropy": 6.6533410663025725,
+    "score": 22.470017399180787,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MbaeParserTask.exe",
+    "type": "PE",
+    "entropy": 5.9216619108818005,
+    "score": 13.323739299484052,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mblctr.exe",
+    "type": "PE",
+    "entropy": 6.60784961887761,
+    "score": 29.867661642474623,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MBR2GPT.EXE",
+    "type": "PE",
+    "entropy": 6.214774813205149,
+    "score": 34.983243329711584,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mcbuilder.exe",
+    "type": "PE",
+    "entropy": 5.887457992026953,
+    "score": 20.746780482060643,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MDEServer.exe",
+    "type": "PE",
+    "entropy": 6.3153930165676515,
+    "score": 21.709634287277215,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MDMAgent.exe",
+    "type": "PE",
+    "entropy": 5.960430010205887,
+    "score": 20.910967522963247,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MDMAppInstaller.exe",
+    "type": "PE",
+    "entropy": 5.847476004057013,
+    "score": 20.65682100912828,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MdmDiagnosticsTool.exe",
+    "type": "PE",
+    "entropy": 5.538005585701414,
+    "score": 19.960512567828182,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MdRes.exe",
+    "type": "PE",
+    "entropy": 6.865487028325616,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MdSched.exe",
+    "type": "PE",
+    "entropy": 6.800611687251979,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mfpmp.exe",
+    "type": "PE",
+    "entropy": 6.083915666563285,
+    "score": 21.188810249767393,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\microsoft.windows.softwarelogo.showdesktop.exe",
+    "type": "PE",
+    "entropy": 4.118208196154138,
+    "score": 16.76596844134681,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MicrosoftEdgeBCHost.exe",
+    "type": "PE",
+    "entropy": 5.574604384164033,
+    "score": 20.042859864369074,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MicrosoftEdgeCP.exe",
+    "type": "PE",
+    "entropy": 5.574604384164036,
+    "score": 20.042859864369078,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MicrosoftEdgeDevTools.exe",
+    "type": "PE",
+    "entropy": 5.574604384164033,
+    "score": 20.042859864369074,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MicrosoftEdgeSH.exe",
+    "type": "PE",
+    "entropy": 5.579539105360016,
+    "score": 20.05396298706004,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mmc.exe",
+    "type": "PE",
+    "entropy": 6.103680678668874,
+    "score": 34.73328152700496,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mmgaserver.exe",
+    "type": "PE",
+    "entropy": 6.191896245416298,
+    "score": 34.93176655218667,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mobsync.exe",
+    "type": "PE",
+    "entropy": 6.997025716903301,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mountvol.exe",
+    "type": "PE",
+    "entropy": 5.181595394449689,
+    "score": 11.658589637511799,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MoUsoCoreWorker.exe",
+    "type": "PE",
+    "entropy": 6.345532561952178,
+    "score": 29.277448264392397,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mpnotify.exe",
+    "type": "PE",
+    "entropy": 5.012873948653063,
+    "score": 18.778966384469392,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MpSigStub.exe",
+    "type": "PE",
+    "entropy": 6.445975480484474,
+    "score": 29.503444831090064,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MRINFO.EXE",
+    "type": "PE",
+    "entropy": 4.947261573366704,
+    "score": 11.131338540075083,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MRT.exe",
+    "type": "PE",
+    "entropy": 7.521702768213378,
+    "score": 58.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MSchedExe.exe",
+    "type": "PE",
+    "entropy": 7.047156392878582,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msconfig.exe",
+    "type": "PE",
+    "entropy": 6.408814179646622,
+    "score": 35.4198319042049,
+    "indicators": [
+      "OpenProcess",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msdt.exe",
+    "type": "PE",
+    "entropy": 6.2382790031598345,
+    "score": 21.536127757109625,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msdtc.exe",
+    "type": "PE",
+    "entropy": 6.013217775556536,
+    "score": 21.029739995002206,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msfeedssync.exe",
+    "type": "PE",
+    "entropy": 5.199041111696683,
+    "score": 19.197842501317538,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mshta.exe",
+    "type": "PE",
+    "entropy": 5.858267770922022,
+    "score": 20.68110248457455,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msiexec.exe",
+    "type": "PE",
+    "entropy": 5.478699127447682,
+    "score": 27.327073036757284,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msinfo32.exe",
+    "type": "PE",
+    "entropy": 6.422170891647936,
+    "score": 21.949884506207855,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mspaint.exe",
+    "type": "PE",
+    "entropy": 6.06929797525124,
+    "score": 34.65592044431529,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress",
+      "VirtualProtect",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\msra.exe",
+    "type": "PE",
+    "entropy": 5.773571989341691,
+    "score": 27.990536976018802,
+    "indicators": [
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MsSpellCheckingHost.exe",
+    "type": "PE",
+    "entropy": 5.960474937770705,
+    "score": 20.911068609984085,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mstsc.exe",
+    "type": "PE",
+    "entropy": 6.3361193818130355,
+    "score": 21.756268609079328,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\mtstocom.exe",
+    "type": "PE",
+    "entropy": 6.042180892893809,
+    "score": 21.094907009011067,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MuiUnattend.exe",
+    "type": "PE",
+    "entropy": 5.6346948740848735,
+    "score": 20.178063466690965,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MultiDigiMon.exe",
+    "type": "PE",
+    "entropy": 5.35943338746275,
+    "score": 12.058725121791188,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MusNotification.exe",
+    "type": "PE",
+    "entropy": 6.341955269733278,
+    "score": 21.769399356899875,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MusNotificationUx.exe",
+    "type": "PE",
+    "entropy": 6.273721632085847,
+    "score": 21.615873672193153,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\MusNotifyIcon.exe",
+    "type": "PE",
+    "entropy": 5.259616977497543,
+    "score": 19.33413819936947,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Narrator.exe",
+    "type": "PE",
+    "entropy": 5.7000594247961365,
+    "score": 42.82513370579131,
+    "indicators": [
+      "VirtualProtect",
+      "OpenProcess",
+      "GetProcAddress",
+      "GetAsyncKeyState",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\nbtstat.exe",
+    "type": "PE",
+    "entropy": 5.301370794757044,
+    "score": 11.928084288203348,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ndadmin.exe",
+    "type": "PE",
+    "entropy": 5.049112596587973,
+    "score": 18.860503342322936,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\NDKPing.exe",
+    "type": "PE",
+    "entropy": 5.749036822417101,
+    "score": 12.935332850438478,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\net.exe",
+    "type": "PE",
+    "entropy": 5.755034733295098,
+    "score": 12.948828149913968,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\net1.exe",
+    "type": "PE",
+    "entropy": 5.975601748847195,
+    "score": 20.945103934906186,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\netbtugc.exe",
+    "type": "PE",
+    "entropy": 5.524145461812205,
+    "score": 19.929327289077463,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\netcfg.exe",
+    "type": "PE",
+    "entropy": 5.447508950940562,
+    "score": 27.25689513961626,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\NetCfgNotifyObjectHost.exe",
+    "type": "PE",
+    "entropy": 5.832431976274896,
+    "score": 20.622971946618517,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\NetEvtFwdr.exe",
+    "type": "PE",
+    "entropy": 5.5128236192102635,
+    "score": 12.403853143223092,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\NetHost.exe",
+    "type": "PE",
+    "entropy": 3.954007083149562,
+    "score": 8.896515937086514,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\netiougc.exe",
+    "type": "PE",
+    "entropy": 5.5706616455686495,
+    "score": 20.033988702529463,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Netplwiz.exe",
+    "type": "PE",
+    "entropy": 5.643501418504206,
+    "score": 20.197878191634466,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\netsh.exe",
+    "type": "PE",
+    "entropy": 4.324420447879897,
+    "score": 17.229946007729765,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\NETSTAT.EXE",
+    "type": "PE",
+    "entropy": 5.533878277098931,
+    "score": 27.451226123472594,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\newdev.exe",
+    "type": "PE",
+    "entropy": 5.04934048129861,
+    "score": 18.86101608292187,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\NgcIso.exe",
+    "type": "PE",
+    "entropy": 6.327737780521343,
+    "score": 21.73741000617302,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\nltest.exe",
+    "type": "PE",
+    "entropy": 5.180380168046721,
+    "score": 19.155855378105123,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\nmbind.exe",
+    "type": "PE",
+    "entropy": 6.172974992217214,
+    "score": 21.389193732488728,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\nmscrub.exe",
+    "type": "PE",
+    "entropy": 6.159118347206054,
+    "score": 21.35801628121362,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\notepad.exe",
+    "type": "PE",
+    "entropy": 6.309256063972001,
+    "score": 21.695826143937,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\nslookup.exe",
+    "type": "PE",
+    "entropy": 5.256783385218056,
+    "score": 11.827762616740626,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ntoskrnl.exe",
+    "type": "PE",
+    "entropy": 6.516434111446167,
+    "score": 19.661976750753873,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ntprint.exe",
+    "type": "PE",
+    "entropy": 6.321551079991684,
+    "score": 21.72348992998129,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\nvspinfo.exe",
+    "type": "PE",
+    "entropy": 5.7936316582337195,
+    "score": 20.535671231025866,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\odbcad32.exe",
+    "type": "PE",
+    "entropy": 7.026654920411591,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\odbcconf.exe",
+    "type": "PE",
+    "entropy": 5.399944545019425,
+    "score": 19.649875226293705,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ofdeploy.exe",
+    "type": "PE",
+    "entropy": 5.803926782847028,
+    "score": 13.058835261405813,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\omadmclient.exe",
+    "type": "PE",
+    "entropy": 6.100833250066822,
+    "score": 28.72687481265035,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\omadmprc.exe",
+    "type": "PE",
+    "entropy": 5.907877023456277,
+    "score": 20.792723302776622,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\OneDriveSetup.exe",
+    "type": "PE",
+    "entropy": 7.933191911308508,
+    "score": 81.0,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "MALICIOUS"
+  },
+  {
+    "path": "test_dataset\\clean\\OOBE-Maintenance.exe",
+    "type": "PE",
+    "entropy": 5.448579696851556,
+    "score": 19.759304317915998,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\openfiles.exe",
+    "type": "PE",
+    "entropy": 5.865062128937638,
+    "score": 28.196389790109684,
+    "indicators": [
+      "VirtualAlloc",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\OpenWith.exe",
+    "type": "PE",
+    "entropy": 6.174273237827276,
+    "score": 21.39211478511137,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\OposHost.exe",
+    "type": "PE",
+    "entropy": 6.184576972922834,
+    "score": 21.415298189076374,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\OptionalFeatures.exe",
+    "type": "PE",
+    "entropy": 7.107406560515717,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\osk.exe",
+    "type": "PE",
+    "entropy": 5.444970034203236,
+    "score": 33.251182576957284,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pacjsworker.exe",
+    "type": "PE",
+    "entropy": 4.547460568512861,
+    "score": 10.231786279153937,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PackagedCWALauncher.exe",
+    "type": "PE",
+    "entropy": 5.745599800712352,
+    "score": 20.42759955160279,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PasswordOnWakeSettingFlyout.exe",
+    "type": "PE",
+    "entropy": 6.2509384105890735,
+    "score": 21.564611423825415,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PATHPING.EXE",
+    "type": "PE",
+    "entropy": 5.217079487102102,
+    "score": 11.73842884597973,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pcalua.exe",
+    "type": "PE",
+    "entropy": 6.136093272740093,
+    "score": 21.30620986366521,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pcaui.exe",
+    "type": "PE",
+    "entropy": 6.298995313975815,
+    "score": 21.672739456445584,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pcwrun.exe",
+    "type": "PE",
+    "entropy": 4.8457784951818255,
+    "score": 10.903001614159106,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\perfhost.exe",
+    "type": "PE",
+    "entropy": 5.41679580567802,
+    "score": 19.687790562775547,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\perfmon.exe",
+    "type": "PE",
+    "entropy": 6.87439881248799,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\phoneactivate.exe",
+    "type": "PE",
+    "entropy": 6.508411560434958,
+    "score": 29.643926010978653,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PickerHost.exe",
+    "type": "PE",
+    "entropy": 6.28287151096625,
+    "score": 21.636460899674063,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PinEnrollmentBroker.exe",
+    "type": "PE",
+    "entropy": 6.043418177500638,
+    "score": 21.097690899376435,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PING.EXE",
+    "type": "PE",
+    "entropy": 5.358141004461097,
+    "score": 12.055817260037466,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PkgMgr.exe",
+    "type": "PE",
+    "entropy": 6.026643697534447,
+    "score": 21.059948319452502,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PktMon.exe",
+    "type": "PE",
+    "entropy": 6.258877127757099,
+    "score": 21.582473537453474,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\plasrv.exe",
+    "type": "PE",
+    "entropy": 4.459760918208576,
+    "score": 17.534462065969294,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PnPUnattend.exe",
+    "type": "PE",
+    "entropy": 5.675235951004098,
+    "score": 20.269280889759223,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pnputil.exe",
+    "type": "PE",
+    "entropy": 6.1742196789188135,
+    "score": 28.891994277567328,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\poqexec.exe",
+    "type": "PE",
+    "entropy": 6.429510108906422,
+    "score": 14.466397745039448,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pospaymentsworker.exe",
+    "type": "PE",
+    "entropy": 5.864882841073927,
+    "score": 20.695986392416337,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\powercfg.exe",
+    "type": "PE",
+    "entropy": 5.8409611315002525,
+    "score": 28.142162545875568,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PresentationHost.exe",
+    "type": "PE",
+    "entropy": 6.439879378686193,
+    "score": 29.489728602043932,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\prevhost.exe",
+    "type": "PE",
+    "entropy": 5.600342342656479,
+    "score": 20.10077027097708,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\print.exe",
+    "type": "PE",
+    "entropy": 5.173439742137518,
+    "score": 11.640239419809415,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\printfilterpipelinesvc.exe",
+    "type": "PE",
+    "entropy": 6.162708202710048,
+    "score": 21.36609345609761,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\PrintIsolationHost.exe",
+    "type": "PE",
+    "entropy": 6.227152735241648,
+    "score": 21.51109365429371,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\printui.exe",
+    "type": "PE",
+    "entropy": 6.336519705924285,
+    "score": 21.75716933832964,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\proquota.exe",
+    "type": "PE",
+    "entropy": 5.862945147110093,
+    "score": 20.691626580997706,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\provlaunch.exe",
+    "type": "PE",
+    "entropy": 5.872940053675466,
+    "score": 20.714115120769797,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\provtool.exe",
+    "type": "PE",
+    "entropy": 5.80576118224068,
+    "score": 20.562962660041528,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ProximityUxHost.exe",
+    "type": "PE",
+    "entropy": 6.4258117268452,
+    "score": 21.9580763854017,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\prproc.exe",
+    "type": "PE",
+    "entropy": 6.059386324031518,
+    "score": 13.633619229070915,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\psr.exe",
+    "type": "PE",
+    "entropy": 6.1570171556166216,
+    "score": 34.8532886001374,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\pwlauncher.exe",
+    "type": "PE",
+    "entropy": 5.543570901837708,
+    "score": 12.473034529134843,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\quickassist.exe",
+    "type": "PE",
+    "entropy": 6.193691879597147,
+    "score": 28.935806729093578,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rasautou.exe",
+    "type": "PE",
+    "entropy": 5.127910461715335,
+    "score": 19.037798538859505,
+    "indicators": [
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rasdial.exe",
+    "type": "PE",
+    "entropy": 5.291652364697063,
+    "score": 11.906217820568392,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\raserver.exe",
+    "type": "PE",
+    "entropy": 5.805578877543354,
+    "score": 20.562552474472547,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rasphone.exe",
+    "type": "PE",
+    "entropy": 5.728506004952117,
+    "score": 20.389138511142264,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rdpclip.exe",
+    "type": "PE",
+    "entropy": 6.339946794800882,
+    "score": 29.264880288301985,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rdpinput.exe",
+    "type": "PE",
+    "entropy": 6.257696452574662,
+    "score": 29.079817018292992,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RdpSa.exe",
+    "type": "PE",
+    "entropy": 5.8549211338093485,
+    "score": 20.673572551071032,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RdpSaProxy.exe",
+    "type": "PE",
+    "entropy": 5.721883788074438,
+    "score": 20.374238523167485,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RdpSaUacHelper.exe",
+    "type": "PE",
+    "entropy": 5.329725227117416,
+    "score": 26.991881761014184,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rdrleakdiag.exe",
+    "type": "PE",
+    "entropy": 5.643623267006043,
+    "score": 33.69815235076359,
+    "indicators": [
+      "OpenProcess",
+      "ReadProcessMemory",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\readCloudDataSettings.exe",
+    "type": "PE",
+    "entropy": 5.740083891633838,
+    "score": 20.415188756176136,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ReAgentc.exe",
+    "type": "PE",
+    "entropy": 5.238842237756875,
+    "score": 26.78739503495297,
+    "indicators": [
+      "VirtualProtect",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RebootPrompt.exe",
+    "type": "PE",
+    "entropy": 6.447796327032085,
+    "score": 44.507541735822194,
+    "indicators": [
+      "VirtualAlloc",
+      "VirtualProtect",
+      "OpenProcess",
+      "GetProcAddress",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\recdisc.exe",
+    "type": "PE",
+    "entropy": 6.202584285258707,
+    "score": 21.45581464183209,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\recover.exe",
+    "type": "PE",
+    "entropy": 4.875760740907694,
+    "score": 10.970461667042311,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RecoveryDrive.exe",
+    "type": "PE",
+    "entropy": 6.066681909571561,
+    "score": 34.65003429653601,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\refsutil.exe",
+    "type": "PE",
+    "entropy": 6.436884750229057,
+    "score": 29.482990688015377,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\reg.exe",
+    "type": "PE",
+    "entropy": 5.996265028984653,
+    "score": 13.49159631521547,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\regedit.exe",
+    "type": "PE",
+    "entropy": 5.828863334086097,
+    "score": 20.61494250169372,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\regedt32.exe",
+    "type": "PE",
+    "entropy": 4.459096037199621,
+    "score": 10.032966083699147,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\regini.exe",
+    "type": "PE",
+    "entropy": 5.862387399412489,
+    "score": 20.690371648678102,
+    "indicators": [
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Register-CimProvider.exe",
+    "type": "PE",
+    "entropy": 5.2825739211206315,
+    "score": 11.88579132252142,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\regsvr32.exe",
+    "type": "PE",
+    "entropy": 5.2008774894852445,
+    "score": 26.701974351341796,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rekeywiz.exe",
+    "type": "PE",
+    "entropy": 6.350735133723718,
+    "score": 21.789154050878366,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\relog.exe",
+    "type": "PE",
+    "entropy": 5.7716758103805015,
+    "score": 12.986270573356128,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RelPost.exe",
+    "type": "PE",
+    "entropy": 6.55446148730622,
+    "score": 22.247538346438994,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RemotePosWorker.exe",
+    "type": "PE",
+    "entropy": 4.520144220061971,
+    "score": 17.670324495139432,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\repair-bde.exe",
+    "type": "PE",
+    "entropy": 6.8993852846357955,
+    "score": 39.0,
+    "indicators": [
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\replace.exe",
+    "type": "PE",
+    "entropy": 5.292744185580552,
+    "score": 11.908674417556242,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ResetEngine.exe",
+    "type": "PE",
+    "entropy": 6.164524258259236,
+    "score": 21.37017958108328,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\resmon.exe",
+    "type": "PE",
+    "entropy": 7.318800591180591,
+    "score": 42.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rgnupdt.exe",
+    "type": "PE",
+    "entropy": 5.852222321032178,
+    "score": 20.667500222322403,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RMActivate.exe",
+    "type": "PE",
+    "entropy": 6.8111348364437125,
+    "score": 45.0,
+    "indicators": [
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RMActivate_isv.exe",
+    "type": "PE",
+    "entropy": 6.803638535968189,
+    "score": 45.0,
+    "indicators": [
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RMActivate_ssp.exe",
+    "type": "PE",
+    "entropy": 6.775802073505778,
+    "score": 36.245554665388,
+    "indicators": [
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RMActivate_ssp_isv.exe",
+    "type": "PE",
+    "entropy": 6.778234082816698,
+    "score": 36.25102668633757,
+    "indicators": [
+      "VirtualProtect",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RmClient.exe",
+    "type": "PE",
+    "entropy": 5.165059664786531,
+    "score": 11.621384245769695,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rmttpmvscmgrsvr.exe",
+    "type": "PE",
+    "entropy": 6.160873316693625,
+    "score": 21.361964962560656,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Robocopy.exe",
+    "type": "PE",
+    "entropy": 6.110507418692182,
+    "score": 28.74864169205741,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ROUTE.EXE",
+    "type": "PE",
+    "entropy": 5.390834740747926,
+    "score": 12.129378166682834,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RpcPing.exe",
+    "type": "PE",
+    "entropy": 5.463579951451847,
+    "score": 19.793054890766655,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rrinstaller.exe",
+    "type": "PE",
+    "entropy": 5.785198979706578,
+    "score": 28.0166977043398,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rstrui.exe",
+    "type": "PE",
+    "entropy": 6.869753724821037,
+    "score": 39.0,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\runas.exe",
+    "type": "PE",
+    "entropy": 5.377928775450389,
+    "score": 12.100339744763376,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\rundll32.exe",
+    "type": "PE",
+    "entropy": 6.0360162093076,
+    "score": 21.0810364709421,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\runexehelper.exe",
+    "type": "PE",
+    "entropy": 5.944970131481625,
+    "score": 20.876182795833657,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RunLegacyCPLElevated.exe",
+    "type": "PE",
+    "entropy": 6.194418466265924,
+    "score": 21.43744154909833,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\runonce.exe",
+    "type": "PE",
+    "entropy": 5.7300199581014,
+    "score": 27.89254490572815,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\RuntimeBroker.exe",
+    "type": "PE",
+    "entropy": 6.341249496671191,
+    "score": 35.26781136751018,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sc.exe",
+    "type": "PE",
+    "entropy": 5.554367714585666,
+    "score": 12.497327357817749,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\schtasks.exe",
+    "type": "PE",
+    "entropy": 5.679200483499211,
+    "score": 20.278201087873224,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sdbinst.exe",
+    "type": "PE",
+    "entropy": 5.375687447394198,
+    "score": 19.595296756636948,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sdchange.exe",
+    "type": "PE",
+    "entropy": 5.573015351341045,
+    "score": 20.03928454051735,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sdclt.exe",
+    "type": "PE",
+    "entropy": 6.778843376091221,
+    "score": 30.252397596205245,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sdiagnhost.exe",
+    "type": "PE",
+    "entropy": 5.547824141975193,
+    "score": 19.982604319444185,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SearchFilterHost.exe",
+    "type": "PE",
+    "entropy": 6.4137652951014585,
+    "score": 21.930971913978283,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SearchIndexer.exe",
+    "type": "PE",
+    "entropy": 6.149455674285583,
+    "score": 28.83627526714256,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SearchProtocolHost.exe",
+    "type": "PE",
+    "entropy": 6.392944310313583,
+    "score": 35.38412469820556,
+    "indicators": [
+      "GetProcAddress",
+      "WriteProcessMemory",
+      "ReadProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SecEdit.exe",
+    "type": "PE",
+    "entropy": 5.377430125989805,
+    "score": 12.09921778347706,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\secinit.exe",
+    "type": "PE",
+    "entropy": 4.53522333363637,
+    "score": 10.204252500681834,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\securekernel.exe",
+    "type": "PE",
+    "entropy": 6.128576331403557,
+    "score": 15.789296745658003,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SecurityHealthHost.exe",
+    "type": "PE",
+    "entropy": 6.178975792649469,
+    "score": 21.402695533461305,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SecurityHealthService.exe",
+    "type": "PE",
+    "entropy": 6.315914650859063,
+    "score": 29.21080796443289,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SecurityHealthSystray.exe",
+    "type": "PE",
+    "entropy": 4.468482177242588,
+    "score": 25.05408489879582,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SensorDataService.exe",
+    "type": "PE",
+    "entropy": 6.123114891333176,
+    "score": 28.777008505499644,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\services.exe",
+    "type": "PE",
+    "entropy": 6.310323114586541,
+    "score": 29.198227007819717,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sessionmsg.exe",
+    "type": "PE",
+    "entropy": 6.126756578232441,
+    "score": 21.28520230102299,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sethc.exe",
+    "type": "PE",
+    "entropy": 5.92189023073829,
+    "score": 34.324253019161155,
+    "indicators": [
+      "VirtualProtect",
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\setspn.exe",
+    "type": "PE",
+    "entropy": 5.348438022271537,
+    "score": 12.033985550110959,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SettingSyncHost.exe",
+    "type": "PE",
+    "entropy": 6.299222373348174,
+    "score": 21.67325034003339,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\setup16.exe",
+    "type": "PE",
+    "entropy": 6.037932393299374,
+    "score": 21.085347884923593,
+    "indicators": [
+      "WinExec"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\setupcl.exe",
+    "type": "PE",
+    "entropy": 4.179949207606037,
+    "score": 9.404885717113583,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\setupugc.exe",
+    "type": "PE",
+    "entropy": 5.66883629994332,
+    "score": 20.25488167487247,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\setx.exe",
+    "type": "PE",
+    "entropy": 5.782048517591835,
+    "score": 13.009609164581628,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sfc.exe",
+    "type": "PE",
+    "entropy": 5.790905839540653,
+    "score": 20.52953813896647,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ShellAppRuntime.exe",
+    "type": "PE",
+    "entropy": 6.4212710631135135,
+    "score": 35.447859892005404,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\shrpubw.exe",
+    "type": "PE",
+    "entropy": 5.295031732652318,
+    "score": 19.413821398467718,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\shutdown.exe",
+    "type": "PE",
+    "entropy": 5.279893670834797,
+    "score": 11.879760759378293,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sigverif.exe",
+    "type": "PE",
+    "entropy": 6.1895273180957435,
+    "score": 13.926436465715422,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SIHClient.exe",
+    "type": "PE",
+    "entropy": 6.3072736729638,
+    "score": 21.69136576416855,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sihost.exe",
+    "type": "PE",
+    "entropy": 6.079115534278046,
+    "score": 21.178009952125603,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SlideToShutDown.exe",
+    "type": "PE",
+    "entropy": 6.105909300399822,
+    "score": 13.7382959258996,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\slui.exe",
+    "type": "PE",
+    "entropy": 6.6409679339894305,
+    "score": 22.442177851476217,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\smartscreen.exe",
+    "type": "PE",
+    "entropy": 7.1392452917381695,
+    "score": 39.0,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\smss.exe",
+    "type": "PE",
+    "entropy": 5.987877083913452,
+    "score": 13.472723438805268,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SndVol.exe",
+    "type": "PE",
+    "entropy": 5.929220863131122,
+    "score": 34.34074694204502,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SnippingTool.exe",
+    "type": "PE",
+    "entropy": 4.344618530309361,
+    "score": 17.275391693196063,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\snmptrap.exe",
+    "type": "PE",
+    "entropy": 5.00746668276325,
+    "score": 11.266800036217314,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sort.exe",
+    "type": "PE",
+    "entropy": 5.640930629273382,
+    "score": 20.192093915865108,
+    "indicators": [
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SpaceAgent.exe",
+    "type": "PE",
+    "entropy": 6.222724532195799,
+    "score": 29.001130197440546,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\spaceman.exe",
+    "type": "PE",
+    "entropy": 6.258586794409398,
+    "score": 21.581820287421145,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SpatialAudioLicenseSrv.exe",
+    "type": "PE",
+    "entropy": 6.379883047501957,
+    "score": 21.8547368568794,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Spectrum.exe",
+    "type": "PE",
+    "entropy": 6.329340391968896,
+    "score": 35.24101588193001,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\spoolsv.exe",
+    "type": "PE",
+    "entropy": 6.022194028386994,
+    "score": 28.549936563870737,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SppExtComObj.Exe",
+    "type": "PE",
+    "entropy": 7.313737876585783,
+    "score": 57.0,
+    "indicators": [
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sppsvc.exe",
+    "type": "PE",
+    "entropy": 7.130776113155486,
+    "score": 45.0,
+    "indicators": [
+      "OpenProcess",
+      "VirtualAlloc",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\srdelayed.exe",
+    "type": "PE",
+    "entropy": 5.556762128429544,
+    "score": 12.502714788966475,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SrTasks.exe",
+    "type": "PE",
+    "entropy": 5.999319764881584,
+    "score": 13.498469470983562,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\stordiag.exe",
+    "type": "PE",
+    "entropy": 5.514737083699705,
+    "score": 12.408158438324337,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\subst.exe",
+    "type": "PE",
+    "entropy": 5.082664554592934,
+    "score": 11.4359952478341,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\svchost.exe",
+    "type": "PE",
+    "entropy": 6.062914774001968,
+    "score": 21.141558241504427,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\sxstrace.exe",
+    "type": "PE",
+    "entropy": 5.595731531816297,
+    "score": 12.590395946586666,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SyncHost.exe",
+    "type": "PE",
+    "entropy": 5.848900778758664,
+    "score": 20.660026752206996,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SynTPEnh.exe",
+    "type": "PE",
+    "entropy": 4.956593026937855,
+    "score": 32.15233431061017,
+    "indicators": [
+      "OpenProcess",
+      "ReadProcessMemory",
+      "GetProcAddress",
+      "GetAsyncKeyState"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SynTPEnhService.exe",
+    "type": "PE",
+    "entropy": 6.272084032510744,
+    "score": 29.112189073149175,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SysResetErr.exe",
+    "type": "PE",
+    "entropy": 6.039068882662747,
+    "score": 13.58790498599118,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\systeminfo.exe",
+    "type": "PE",
+    "entropy": 5.670046370150801,
+    "score": 12.757604332839302,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesAdvanced.exe",
+    "type": "PE",
+    "entropy": 7.078407232206848,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesComputerName.exe",
+    "type": "PE",
+    "entropy": 7.080158893682421,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesDataExecutionPrevention.exe",
+    "type": "PE",
+    "entropy": 7.084122060404204,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesHardware.exe",
+    "type": "PE",
+    "entropy": 7.077513082015666,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesPerformance.exe",
+    "type": "PE",
+    "entropy": 7.056811962835593,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesProtection.exe",
+    "type": "PE",
+    "entropy": 7.079424847907375,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemPropertiesRemote.exe",
+    "type": "PE",
+    "entropy": 7.0780083700562155,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\systemreset.exe",
+    "type": "PE",
+    "entropy": 6.306308447761186,
+    "score": 21.689194007462667,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemSettingsAdminFlows.exe",
+    "type": "PE",
+    "entropy": 6.127892832920687,
+    "score": 28.787758874071542,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemSettingsBroker.exe",
+    "type": "PE",
+    "entropy": 5.980397574239161,
+    "score": 20.95589454203811,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemSettingsRemoveDevice.exe",
+    "type": "PE",
+    "entropy": 6.312001585723796,
+    "score": 21.702003567878542,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\SystemUWPLauncher.exe",
+    "type": "PE",
+    "entropy": 5.800230014067372,
+    "score": 20.550517531651586,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\systray.exe",
+    "type": "PE",
+    "entropy": 4.344423033567514,
+    "score": 9.774951825526907,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tabcal.exe",
+    "type": "PE",
+    "entropy": 5.701212870751841,
+    "score": 12.827728959191642,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\takeown.exe",
+    "type": "PE",
+    "entropy": 5.7845783431330435,
+    "score": 20.51530127204935,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TapiUnattend.exe",
+    "type": "PE",
+    "entropy": 4.773707445557826,
+    "score": 10.740841752505107,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tar.exe",
+    "type": "PE",
+    "entropy": 5.75941194475847,
+    "score": 12.958676875706557,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\taskhostw.exe",
+    "type": "PE",
+    "entropy": 6.0852990794132875,
+    "score": 13.691922928679896,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\taskkill.exe",
+    "type": "PE",
+    "entropy": 5.791678991934578,
+    "score": 28.031277731852803,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tasklist.exe",
+    "type": "PE",
+    "entropy": 5.8438591519503085,
+    "score": 28.148683091888195,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Taskmgr.exe",
+    "type": "PE",
+    "entropy": 6.263363001218741,
+    "score": 35.092566752742165,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress",
+      "ReadProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tcblaunch.exe",
+    "type": "PE",
+    "entropy": 6.642650862659069,
+    "score": 14.945964440982905,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tcmsetup.exe",
+    "type": "PE",
+    "entropy": 5.035222371173687,
+    "score": 11.329250335140797,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TCPSVCS.EXE",
+    "type": "PE",
+    "entropy": 4.5802373320701575,
+    "score": 17.805533997157852,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ThumbnailExtractionHost.exe",
+    "type": "PE",
+    "entropy": 5.447140655568879,
+    "score": 19.75606647502998,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TieringEngineService.exe",
+    "type": "PE",
+    "entropy": 6.293041692183639,
+    "score": 14.159343807413189,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\timeout.exe",
+    "type": "PE",
+    "entropy": 5.679083841421329,
+    "score": 12.77793864319799,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TokenBrokerCookies.exe",
+    "type": "PE",
+    "entropy": 5.625336266612181,
+    "score": 20.157006599877406,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TpmInit.exe",
+    "type": "PE",
+    "entropy": 5.498145092002266,
+    "score": 19.8708264570051,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TpmTool.exe",
+    "type": "PE",
+    "entropy": 6.086036032504225,
+    "score": 21.193581073134506,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tpmvscmgr.exe",
+    "type": "PE",
+    "entropy": 6.156716913382497,
+    "score": 21.352613055110616,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tpmvscmgrsvr.exe",
+    "type": "PE",
+    "entropy": 6.14517439045123,
+    "score": 21.326642378515267,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tracerpt.exe",
+    "type": "PE",
+    "entropy": 6.027892591891641,
+    "score": 21.062758331756193,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TRACERT.EXE",
+    "type": "PE",
+    "entropy": 5.16157253142909,
+    "score": 11.613538195715451,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TSTheme.exe",
+    "type": "PE",
+    "entropy": 5.688666462787765,
+    "score": 20.29949954127247,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\TSWbPrxy.exe",
+    "type": "PE",
+    "entropy": 5.923459168569802,
+    "score": 20.827783129282054,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ttdinject.exe",
+    "type": "PE",
+    "entropy": 6.20369819519322,
+    "score": 43.958320939184745,
+    "indicators": [
+      "GetProcAddress",
+      "CreateRemoteThread",
+      "VirtualProtect",
+      "ReadProcessMemory",
+      "WriteProcessMemory",
+      "VirtualAlloc",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tttracer.exe",
+    "type": "PE",
+    "entropy": 6.3124103243635155,
+    "score": 21.702923229817912,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\typeperf.exe",
+    "type": "PE",
+    "entropy": 5.777596345309777,
+    "score": 12.999591776946998,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tzsync.exe",
+    "type": "PE",
+    "entropy": 5.903350802158271,
+    "score": 17.28253930485611,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\tzutil.exe",
+    "type": "PE",
+    "entropy": 5.361871744081163,
+    "score": 19.564211424182616,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UCPDMgr.exe",
+    "type": "PE",
+    "entropy": 6.24464381835996,
+    "score": 29.05044859130991,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\ucsvc.exe",
+    "type": "PE",
+    "entropy": 6.096924022841749,
+    "score": 34.718079051393936,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UIMgrBroker.exe",
+    "type": "PE",
+    "entropy": 5.655249724625874,
+    "score": 20.224311880408216,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\unlodctr.exe",
+    "type": "PE",
+    "entropy": 5.51444087799313,
+    "score": 12.407491975484543,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\unregmp2.exe",
+    "type": "PE",
+    "entropy": 5.07969318950013,
+    "score": 18.92930967637529,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\upfc.exe",
+    "type": "PE",
+    "entropy": 6.564931235032503,
+    "score": 22.271095278823132,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UpgradeResultsUI.exe",
+    "type": "PE",
+    "entropy": 5.687202718719454,
+    "score": 27.79620611711877,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\upnpcont.exe",
+    "type": "PE",
+    "entropy": 5.497652095133094,
+    "score": 33.36971721404946,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UPPrinterInstaller.exe",
+    "type": "PE",
+    "entropy": 5.63270953495081,
+    "score": 20.173596453639323,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\user.exe",
+    "type": "PE",
+    "entropy": 1.9698234951582718,
+    "score": 4.4321028641061115,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UserAccountBroker.exe",
+    "type": "PE",
+    "entropy": 6.284185222678787,
+    "score": 29.13941675102727,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UserAccountControlSettings.exe",
+    "type": "PE",
+    "entropy": 5.578588367162317,
+    "score": 20.051823826115214,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\userinit.exe",
+    "type": "PE",
+    "entropy": 5.719070382227723,
+    "score": 20.367908360012375,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UsoClient.exe",
+    "type": "PE",
+    "entropy": 6.148978535406942,
+    "score": 21.33520170466562,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\usocoreworker.exe",
+    "type": "PE",
+    "entropy": 6.3644114184918665,
+    "score": 35.3199256916067,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\UtcDecoderHost.exe",
+    "type": "PE",
+    "entropy": 6.125982786558234,
+    "score": 21.283461269756025,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Utilman.exe",
+    "type": "PE",
+    "entropy": 6.0152931884355505,
+    "score": 34.53440967397999,
+    "indicators": [
+      "VirtualProtect",
+      "ReadProcessMemory",
+      "OpenProcess",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\VaultCmd.exe",
+    "type": "PE",
+    "entropy": 5.477332297874589,
+    "score": 19.823997670217825,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vds.exe",
+    "type": "PE",
+    "entropy": 6.00963499631668,
+    "score": 28.521678741712527,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vdsldr.exe",
+    "type": "PE",
+    "entropy": 5.574614955421543,
+    "score": 12.542883649698473,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\verclsid.exe",
+    "type": "PE",
+    "entropy": 4.793369190683193,
+    "score": 18.285080679037186,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\verifier.exe",
+    "type": "PE",
+    "entropy": 5.573766483527994,
+    "score": 20.04097458793799,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\verifiergui.exe",
+    "type": "PE",
+    "entropy": 5.671066402132529,
+    "score": 12.75989940479819,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vfpctrl.exe",
+    "type": "PE",
+    "entropy": 5.216687944417067,
+    "score": 11.7375478749384,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vmcompute.exe",
+    "type": "PE",
+    "entropy": 6.327306030142409,
+    "score": 29.23643856782042,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vmwp.exe",
+    "type": "PE",
+    "entropy": 6.267089345465736,
+    "score": 35.10095102729791,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\VsGraphicsDesktopEngine.exe",
+    "type": "PE",
+    "entropy": 5.766796483477027,
+    "score": 33.97529208782331,
+    "indicators": [
+      "VirtualProtect",
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\VsGraphicsRemoteEngine.exe",
+    "type": "PE",
+    "entropy": 5.71376480785216,
+    "score": 33.855970817667355,
+    "indicators": [
+      "OpenProcess",
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vsjitdebugger.exe",
+    "type": "PE",
+    "entropy": 6.38148090681831,
+    "score": 44.358332040341196,
+    "indicators": [
+      "OpenProcess",
+      "ReadProcessMemory",
+      "GetProcAddress",
+      "VirtualAlloc",
+      "VirtualProtect",
+      "WriteProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vssadmin.exe",
+    "type": "PE",
+    "entropy": 5.626989681354121,
+    "score": 12.660726783046771,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\VSSVC.exe",
+    "type": "PE",
+    "entropy": 5.925068773409715,
+    "score": 34.33140474017186,
+    "indicators": [
+      "VirtualAlloc",
+      "VirtualProtect",
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vulkaninfo-1-999-0-0-0.exe",
+    "type": "PE",
+    "entropy": 5.715175278907248,
+    "score": 20.359144377541305,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\vulkaninfo.exe",
+    "type": "PE",
+    "entropy": 5.715175278907252,
+    "score": 20.35914437754132,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\w32tm.exe",
+    "type": "PE",
+    "entropy": 5.992872645422469,
+    "score": 20.983963452200555,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WaaSMedicAgent.exe",
+    "type": "PE",
+    "entropy": 5.551219148802608,
+    "score": 19.99024308480587,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\waitfor.exe",
+    "type": "PE",
+    "entropy": 5.701379022670315,
+    "score": 12.828102801008209,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WallpaperHost.exe",
+    "type": "PE",
+    "entropy": 5.512163424817406,
+    "score": 19.902367705839165,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wbadmin.exe",
+    "type": "PE",
+    "entropy": 6.355599648111543,
+    "score": 14.300099208250971,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wbengine.exe",
+    "type": "PE",
+    "entropy": 6.460922402944997,
+    "score": 22.037075406626244,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wecutil.exe",
+    "type": "PE",
+    "entropy": 5.779156184065711,
+    "score": 13.003101414147848,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WerFault.exe",
+    "type": "PE",
+    "entropy": 6.446773622767956,
+    "score": 35.5052406512279,
+    "indicators": [
+      "GetProcAddress",
+      "ReadProcessMemory",
+      "VirtualAlloc",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WerFaultSecure.exe",
+    "type": "PE",
+    "entropy": 6.90395028600861,
+    "score": 45.0,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wermgr.exe",
+    "type": "PE",
+    "entropy": 6.744670688680205,
+    "score": 36.17550904953046,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "ReadProcessMemory"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wevtutil.exe",
+    "type": "PE",
+    "entropy": 6.278699952163393,
+    "score": 21.627074892367634,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wextract.exe",
+    "type": "PE",
+    "entropy": 6.908172998176475,
+    "score": 31.5,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WFS.exe",
+    "type": "PE",
+    "entropy": 5.970196326846271,
+    "score": 28.432941735404107,
+    "indicators": [
+      "VirtualProtect",
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\where.exe",
+    "type": "PE",
+    "entropy": 5.767072892463609,
+    "score": 12.975914008043121,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\whoami.exe",
+    "type": "PE",
+    "entropy": 5.905965361178819,
+    "score": 13.288422062652344,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wiaacmgr.exe",
+    "type": "PE",
+    "entropy": 5.69931701281169,
+    "score": 33.8234632788263,
+    "indicators": [
+      "VirtualAlloc",
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wiawow64.exe",
+    "type": "PE",
+    "entropy": 5.526775203704492,
+    "score": 19.935244208335106,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wifitask.exe",
+    "type": "PE",
+    "entropy": 6.008574083961675,
+    "score": 13.51929168891377,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wimserv.exe",
+    "type": "PE",
+    "entropy": 6.365237052351892,
+    "score": 29.32178336779176,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WinBioDataModelOOBE.exe",
+    "type": "PE",
+    "entropy": 5.964776451062954,
+    "score": 28.420747014891646,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Windows.Media.BackgroundPlayback.exe",
+    "type": "PE",
+    "entropy": 4.743529319347191,
+    "score": 10.67294096853118,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\Windows.WARP.JITService.exe",
+    "type": "PE",
+    "entropy": 5.914821881877153,
+    "score": 28.30834923422359,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WindowsActionDialog.exe",
+    "type": "PE",
+    "entropy": 6.0343893074663235,
+    "score": 21.077375941799225,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WindowsUpdateElevatedInstaller.exe",
+    "type": "PE",
+    "entropy": 5.91166029147786,
+    "score": 20.801235655825185,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wininit.exe",
+    "type": "PE",
+    "entropy": 6.252905338883655,
+    "score": 35.069037012488224,
+    "indicators": [
+      "CreateRemoteThread",
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\winload.exe",
+    "type": "PE",
+    "entropy": 6.542263090653041,
+    "score": 14.720091953969341,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\winlogon.exe",
+    "type": "PE",
+    "entropy": 6.251075042398193,
+    "score": 35.06491884539593,
+    "indicators": [
+      "GetProcAddress",
+      "CreateRemoteThread",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\winresume.exe",
+    "type": "PE",
+    "entropy": 6.527022828333596,
+    "score": 14.68580136375059,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\winrs.exe",
+    "type": "PE",
+    "entropy": 5.665005717347387,
+    "score": 12.74626286403162,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\winrshost.exe",
+    "type": "PE",
+    "entropy": 5.461963331789017,
+    "score": 19.78941749652529,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WinRTNetMUAHostServer.exe",
+    "type": "PE",
+    "entropy": 5.097763139519506,
+    "score": 11.469967063918888,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WinSAT.exe",
+    "type": "PE",
+    "entropy": 6.36888449250538,
+    "score": 35.3299901081371,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\winver.exe",
+    "type": "PE",
+    "entropy": 6.080947224810462,
+    "score": 13.68213125582354,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wkspbroker.exe",
+    "type": "PE",
+    "entropy": 6.322489786501204,
+    "score": 29.225602019627708,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wksprt.exe",
+    "type": "PE",
+    "entropy": 6.544308519208488,
+    "score": 29.724694168219095,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualAlloc"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wlanext.exe",
+    "type": "PE",
+    "entropy": 5.976602488015733,
+    "score": 20.9473555980354,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wlrmdr.exe",
+    "type": "PE",
+    "entropy": 5.862331009914362,
+    "score": 20.690244772307317,
+    "indicators": [
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WMPDMC.exe",
+    "type": "PE",
+    "entropy": 6.5749126409261605,
+    "score": 22.293553442083862,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WorkFolders.exe",
+    "type": "PE",
+    "entropy": 5.815331581840653,
+    "score": 13.084496059141468,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wowreg32.exe",
+    "type": "PE",
+    "entropy": 4.987003079226614,
+    "score": 18.72075692825988,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WpcMon.exe",
+    "type": "PE",
+    "entropy": 6.149194173330046,
+    "score": 21.3356868899926,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WpcTok.exe",
+    "type": "PE",
+    "entropy": 6.043987191821644,
+    "score": 21.0989711815987,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WPDShextAutoplay.exe",
+    "type": "PE",
+    "entropy": 5.605286698813517,
+    "score": 12.611895072330412,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wpnpinst.exe",
+    "type": "PE",
+    "entropy": 5.33256644982299,
+    "score": 19.49827451210173,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wpr.exe",
+    "type": "PE",
+    "entropy": 6.147318579606912,
+    "score": 21.33146680411555,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\write.exe",
+    "type": "PE",
+    "entropy": 4.652494653113666,
+    "score": 10.468112969505748,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wscadminui.exe",
+    "type": "PE",
+    "entropy": 4.052247196881832,
+    "score": 9.117556192984122,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WSCollect.exe",
+    "type": "PE",
+    "entropy": 3.667668846292598,
+    "score": 15.752254904158345,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wscript.exe",
+    "type": "PE",
+    "entropy": 5.740397176338331,
+    "score": 20.415893646761244,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wsl.exe",
+    "type": "PE",
+    "entropy": 6.196495523213785,
+    "score": 21.442114927231017,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wslconfig.exe",
+    "type": "PE",
+    "entropy": 5.966853104298418,
+    "score": 20.92541948467144,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WSManHTTPConfig.exe",
+    "type": "PE",
+    "entropy": 5.21635066905008,
+    "score": 11.736789005362677,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wsmprovhost.exe",
+    "type": "PE",
+    "entropy": 5.562147272274065,
+    "score": 12.514831362616647,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wsqmcons.exe",
+    "type": "PE",
+    "entropy": 5.399697251696016,
+    "score": 19.649318816316036,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WSReset.exe",
+    "type": "PE",
+    "entropy": 3.594249853951302,
+    "score": 15.587062171390428,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wuapihost.exe",
+    "type": "PE",
+    "entropy": 4.59972291152614,
+    "score": 10.349376550933814,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wuauclt.exe",
+    "type": "PE",
+    "entropy": 6.266469094971438,
+    "score": 21.599555463685732,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WUDFCompanionHost.exe",
+    "type": "PE",
+    "entropy": 6.217236801793398,
+    "score": 28.988782804035143,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WUDFHost.exe",
+    "type": "PE",
+    "entropy": 6.23061337852095,
+    "score": 29.018880101672135,
+    "indicators": [
+      "GetProcAddress",
+      "VirtualProtect"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\wusa.exe",
+    "type": "PE",
+    "entropy": 6.606868193887421,
+    "score": 22.365453436246696,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\WWAHost.exe",
+    "type": "PE",
+    "entropy": 6.280272952381959,
+    "score": 29.130614142859407,
+    "indicators": [
+      "GetProcAddress",
+      "OpenProcess"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\XblGameSaveTask.exe",
+    "type": "PE",
+    "entropy": 5.464323746694649,
+    "score": 19.79472843006296,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\xcopy.exe",
+    "type": "PE",
+    "entropy": 5.6631255996168886,
+    "score": 12.742032599137998,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\XtuService.exe",
+    "type": "PE",
+    "entropy": 7.077941619130378,
+    "score": 24.0,
+    "indicators": [],
+    "verdict": "CLEAN"
+  },
+  {
+    "path": "test_dataset\\clean\\xwizard.exe",
+    "type": "PE",
+    "entropy": 5.834868696130726,
+    "score": 20.62845456629413,
+    "indicators": [
+      "GetProcAddress"
+    ],
+    "verdict": "CLEAN"
+  }
+]

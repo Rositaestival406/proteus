@@ -48,19 +48,22 @@ class ProteusMLTrainer:
         except Exception as e:
             error_msg = str(e)
             # Expected errors - silently skip
-            if any(x in error_msg for x in [
-                "Unsupported file type",
-                "bad offset",
-                "bad magic",
-                "bad input",
-                "invalid utf8",
-                "Invalid PE",
-                "Invalid ELF",
-                "Malformed entity",
-                "Unable to extract",
-                "Cannot find name from rva",
-                "Probably cert_size"
-            ]):
+            if any(
+                x in error_msg
+                for x in [
+                    "Unsupported file type",
+                    "bad offset",
+                    "bad magic",
+                    "bad input",
+                    "invalid utf8",
+                    "Invalid PE",
+                    "Invalid ELF",
+                    "Malformed entity",
+                    "Unable to extract",
+                    "Cannot find name from rva",
+                    "Probably cert_size",
+                ]
+            ):
                 return None
             # Unexpected errors - log them
             else:
@@ -72,12 +75,8 @@ class ProteusMLTrainer:
     ) -> Tuple[np.ndarray, np.ndarray]:
         X = []
         y = []
-        
-        skipped_reasons = {
-            'unsupported': 0,
-            'corrupted': 0,
-            'other': 0
-        }
+
+        skipped_reasons = {"unsupported": 0, "corrupted": 0, "other": 0}
         processed = 0
 
         print("[*] Processing malicious samples...")
@@ -87,7 +86,7 @@ class ProteusMLTrainer:
             mal_files = [
                 f for f in mal_files if f.suffix.lower() in [".exe", ".dll", ".malware"]
             ]
-            
+
             total_files = len(mal_files)
             print(f"    Found {total_files} malware files")
 
@@ -99,25 +98,31 @@ class ProteusMLTrainer:
                         y.append(1)
                         processed += 1
                         if processed % 20 == 0:
-                            print(f"    Progress: {processed}/{total_files} processed...")
+                            print(
+                                f"    Progress: {processed}/{total_files} processed..."
+                            )
                     else:
-                        file_bytes = file.read_bytes()[:4] if file.exists() else b''
-                        if file_bytes[:2] == b'PK':
-                            skipped_reasons['corrupted'] += 1
-                        elif file_bytes[:2] in [b'MZ', b'\x7fELF']:
-                            skipped_reasons['corrupted'] += 1
+                        file_bytes = file.read_bytes()[:4] if file.exists() else b""
+                        if file_bytes[:2] == b"PK":
+                            skipped_reasons["corrupted"] += 1
+                        elif file_bytes[:2] in [b"MZ", b"\x7fELF"]:
+                            skipped_reasons["corrupted"] += 1
                         else:
-                            skipped_reasons['unsupported'] += 1
+                            skipped_reasons["unsupported"] += 1
                 except KeyboardInterrupt:
                     raise
                 except Exception as e:
-                    skipped_reasons['other'] += 1
-                    
+                    skipped_reasons["other"] += 1
+
             print(f"\n    [✓] Malicious samples:")
             print(f"        Processed: {processed}")
-            print(f"        Skipped - Unsupported format: {skipped_reasons['unsupported']}")
-            print(f"        Skipped - Corrupted/Invalid: {skipped_reasons['corrupted']}")
-            if skipped_reasons['other'] > 0:
+            print(
+                f"        Skipped - Unsupported format: {skipped_reasons['unsupported']}"
+            )
+            print(
+                f"        Skipped - Corrupted/Invalid: {skipped_reasons['corrupted']}"
+            )
+            if skipped_reasons["other"] > 0:
                 print(f"        Skipped - Other errors: {skipped_reasons['other']}")
         else:
             print(f"[!] Malicious directory not found: {malicious_dir}")
@@ -130,7 +135,7 @@ class ProteusMLTrainer:
             clean_skipped = 0
             total_clean = len(clean_files)
             print(f"    Found {total_clean} clean files")
-            
+
             for idx, file in enumerate(clean_files, 1):
                 try:
                     features = self.extract_features(str(file))
@@ -139,14 +144,16 @@ class ProteusMLTrainer:
                         y.append(0)
                         clean_processed += 1
                         if clean_processed % 100 == 0:
-                            print(f"    Progress: {clean_processed}/{total_clean} processed...")
+                            print(
+                                f"    Progress: {clean_processed}/{total_clean} processed..."
+                            )
                     else:
                         clean_skipped += 1
                 except KeyboardInterrupt:
                     raise
                 except Exception as e:
                     clean_skipped += 1
-                    
+
             print(f"\n    [✓] Clean samples:")
             print(f"        Processed: {clean_processed}")
             if clean_skipped > 0:
