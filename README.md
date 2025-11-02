@@ -45,17 +45,19 @@ Proteus is a high-performance malware analysis tool built with Rust and Python, 
 - 📈 **Feature Engineering** - 16+ features including entropy, imports, exports, strings
 - 🎯 **Detection Metrics** - Built-in accuracy, precision, recall tracking
 - 🔧 **Extensible** - Modular architecture for custom analyzers
-- 🔒 **Security Hardened** - Path traversal protection, input validation, rate limiting
-- ⚙️ **Configuration Management** - Environment variables, config files, secure storage
 
-## 📊 Detection Metrics (Test Dataset)
+## 📊 Detection Metrics (Real-World Dataset)
 
 | Metric | Value |
 |--------|-------|
-| Detection Rate | 100% |
-| False Positive Rate | 0% |
-| Avg Clean Score | 20.73/100 |
-| Avg Malicious Score | 66.00/100 |
+| Test Accuracy | 96.22% |
+| Precision (Malicious) | 95% |
+| Recall (Malicious) | 97% |
+| F1-Score | 0.96 |
+| False Positive Rate | 0.97% |
+| Training Dataset | 1,190 samples |
+| Real Malware Samples | 576 |
+| Clean Samples | 614 |
 
 ## 🚀 Quick Start
 
@@ -65,47 +67,19 @@ Proteus is a high-performance malware analysis tool built with Rust and Python, 
 - **Python** 3.10+ ([Install](https://www.python.org/downloads/))
 - **Windows** 10/11 or **Linux**
 - **YARA** 4.5+ (Optional, required for Rust build - [Install Guide](install_yara_windows.ps1))
-- **MalwareBazaar API Key** (Free - [Get one here](https://bazaar.abuse.ch/account/))
+- **MalwareBazaar API** (Optional, for dataset collection - included in code)
 
 ### Installation
 ```bash
-# Clone repository
 git clone https://github.com/ChronoCoders/proteus.git
 cd proteus
 
-# Create virtual environment
 python -m venv venv
-venv\Scripts\activate  # Windows
-# source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate
 
-# Install Python dependencies
 pip install -r requirements.txt
 
-# Build Rust module
 maturin develop --release
-```
-
-### Configuration
-
-**Option 1: Using .env file (Recommended)**
-```bash
-# Create .env file in project root
-echo "MALWAREBAZAAR_API_KEY=your_api_key_here" > .env
-```
-
-**Option 2: Using environment variables**
-```bash
-# Windows
-set MALWAREBAZAAR_API_KEY=your_api_key_here
-
-# Linux/Mac
-export MALWAREBAZAAR_API_KEY=your_api_key_here
-```
-
-**Option 3: Using config file**
-```bash
-# Config is automatically saved to ~/.proteus/config.json
-# after first run or manual configuration
 ```
 
 ### Basic Usage
@@ -115,9 +89,19 @@ export MALWAREBAZAAR_API_KEY=your_api_key_here
 python cli.py file C:\path\to\sample.exe
 ```
 
+**Analyze with ML prediction:**
+```bash
+python cli.py file C:\path\to\sample.exe --ml
+```
+
 **Analyze with full string extraction:**
 ```bash
 python cli.py file C:\path\to\sample.exe --strings
+```
+
+**Complete analysis (ML + strings):**
+```bash
+python cli.py file C:\path\to\sample.exe --ml --strings
 ```
 
 **String-only analysis:**
@@ -132,25 +116,36 @@ python cli.py dir C:\path\to\samples --output results.json
 
 ### Collecting Real Malware Dataset
 
-**Collect malware samples from MalwareBazaar:**
+**Collect malware samples from MalwareBazaar (default: 50 samples per tag, ~500 total):**
 ```bash
-# Default: 50 samples per tag (~500 total)
 python malware_collector.py
+```
 
-# Custom sample count
-python malware_collector.py --samples=100  # ~1000 total
+**Collect with custom sample count:**
+```bash
+# Collect 100 samples per tag (~1000 total)
+python malware_collector.py --samples=100
 
-# With verbose output
+# Collect 20 samples per tag (~200 total)
+python malware_collector.py --samples=20
+```
+
+**Enable verbose debugging mode:**
+```bash
 python malware_collector.py --verbose
 ```
 
+**Combine options:**
+```bash
+python malware_collector.py --samples=100 --verbose
+```
+
 **Features:**
-- ✅ Automatic AES-encrypted ZIP extraction via pyzipper
-- ✅ SHA256 hash verification of extracted content
-- ✅ Retry logic for failed downloads
+- ✅ Automatic AES-encrypted ZIP extraction
+- ✅ Retry logic for failed downloads (2 attempts per sample)
 - ✅ Real-time progress tracking
 - ✅ Graceful interrupt handling (Ctrl+C saves progress)
-- ✅ Metadata persistence for resume capability
+- ✅ Metadata persistence (resume capability)
 - ✅ 10 malware categories: ransomware, trojan, rat, stealer, backdoor, loader, miner, banker, spyware, worm
 
 **Collection Statistics:**
@@ -173,7 +168,7 @@ python ml_trainer.py
 ### Example Output
 ```
 ╔═══════════════════════════════════════╗
-║         PROTEUS v0.1.3                ║
+║         PROTEUS v0.1.4                ║
 ║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 
@@ -186,6 +181,15 @@ python ml_trainer.py
     - VirtualAlloc
     - CreateRemoteThread
     - WriteProcessMemory
+
+[*] ML Analysis:
+[+] Random Forest loaded from models/rf_model.pkl
+[+] Isolation Forest loaded from models/iso_model.pkl
+[+] ML Prediction: MALICIOUS
+[+] Confidence: 100.00%
+[+] Probabilities:
+    Clean: 0.00%
+    Malicious: 100.00%
 
 [*] String Analysis:
 [+] Total strings: 342
@@ -216,58 +220,16 @@ proteus/
 │   ├── __init__.py
 │   ├── analyzer.py           # Main analyzer class
 │   ├── ml_detector.py        # ML model integration
-│   ├── config.py             # Configuration management
-│   ├── validators.py         # Security validators
-│   └── rate_limiter.py       # API rate limiting
+│   ├── config.py             # Configuration management (NEW v0.1.3)
+│   ├── validators.py         # Security validators (NEW v0.1.3)
+│   └── rate_limiter.py       # API rate limiting (NEW v0.1.3)
 ├── cli.py                    # Command-line interface
 ├── malware_collector.py      # MalwareBazaar dataset collector
 ├── ml_trainer.py             # ML training pipeline
 ├── test_dataset_builder.py   # Dataset generation
 ├── requirements.txt          # Python dependencies
 ├── Cargo.toml                # Rust dependencies
-├── .env.example              # Example environment config
 └── pyproject.toml            # Python project configuration
-```
-
-### New in v0.1.3
-
-**Configuration Management:**
-```python
-from python.config import ConfigManager, ProteusConfig
-
-# Load configuration
-config = ConfigManager.create_proteus_config()
-
-# Access settings
-print(f"API Key: {config.api_key}")
-print(f"Rate Limit: {config.rate_limit_requests} req/{config.rate_limit_window}s")
-```
-
-**Rate Limiting:**
-```python
-from python.rate_limiter import RateLimiter
-
-# Create rate limiter: 10 requests per 60 seconds
-limiter = RateLimiter(max_requests=10, time_window=60.0)
-
-# Wait if needed before making request
-if limiter.wait_if_needed(timeout=30):
-    # Make API request
-    pass
-```
-
-**Security Validation:**
-```python
-from python.validators import SecurityValidator
-
-# Validate file path
-safe_path = SecurityValidator.validate_file_path("/path/to/file.exe")
-
-# Validate SHA256 hash
-is_valid = SecurityValidator.validate_sha256("abc123...")
-
-# Sanitize filename
-clean_name = SecurityValidator.sanitize_filename("evil<>file.exe")
 ```
 
 ### Feature Extraction
@@ -327,19 +289,14 @@ encrypt, bitcoin, miner, bypass, disable
 
 ### Build & Test
 ```bash
-# Development build
 maturin develop
 
-# Release build
 maturin develop --release
 
-# Run Rust tests
 cargo test
 
-# Run Python tests
 python -m pytest
 
-# Type checking
 cargo clippy
 mypy .
 ```
@@ -363,13 +320,13 @@ Contributions are welcome! Please:
 
 ## 🗺️ Roadmap
 
-### v0.1.3 (Current) ✅
-- [x] Configuration management system
-- [x] API rate limiting
-- [x] Security validators
-- [x] Environment variable support
-- [x] Fixed API authentication
-- [x] Removed hardcoded credentials
+### v0.1.4 (Current) ✅
+- [x] ML prediction integration (96% accuracy)
+- [x] Random Forest classifier
+- [x] Isolation Forest anomaly detection
+- [x] Train with 576 real malware samples
+- [x] CLI --ml flag for ML predictions
+- [x] Confidence scores and probabilities
 
 ### v0.2.0 (Planned)
 - [ ] YARA rule engine integration
@@ -377,15 +334,14 @@ Contributions are welcome! Please:
 - [ ] Digital signature validation
 - [ ] PE resource section analysis
 - [ ] Retrain ML models with real-world dataset (500+ samples)
-- [ ] Web UI dashboard
 
 ### v0.3.0 (Future)
 - [ ] HTML report generation
 - [ ] REST API server
+- [ ] Web dashboard
 - [ ] Real-time monitoring
 - [ ] PCAP analysis integration
 - [ ] Behavior monitoring (dynamic analysis)
-- [ ] Distributed scanning
 
 ## 📊 Performance
 
@@ -394,16 +350,14 @@ Contributions are welcome! Please:
 - Batch processing (100 files): ~3 seconds
 - String extraction: ~20ms
 - ML prediction: ~5ms
-- Malware collection: ~200 samples in ~6 minutes
 
 ## ⚠️ Limitations
 
-**Current Version (v0.1.3):**
+**Current Version (v0.1.4):**
 - ML models require training on collected real-world samples
 - No dynamic analysis capabilities
 - Windows-focused (PE analysis more mature than ELF)
 - Dataset collection requires MalwareBazaar API access
-- Rate limiting may slow down large collections
 
 **Recommended Use:**
 - Educational purposes
@@ -419,7 +373,6 @@ Contributions are welcome! Please:
 - Do not use on production systems without proper testing
 - Obey local laws regarding malware possession and analysis
 - This tool is for educational and research purposes only
-- Never hardcode API keys in source code
 
 **Disclaimer:**
 The authors are not responsible for misuse of this tool. Users are solely responsible for ensuring their usage complies with applicable laws and regulations.
@@ -436,7 +389,6 @@ Copyright (c) 2025 ChronoCoders
 - Advanced static analysis engine
 - ML integration
 - Performance optimization
-- Security hardening
 
 ## 🙏 Acknowledgments
 
@@ -446,7 +398,6 @@ Copyright (c) 2025 ChronoCoders
 - **scikit-learn** - ML algorithms
 - **pyzipper** - AES-encrypted ZIP extraction
 - **MalwareBazaar** - Real-world malware sample repository
-- **python-dotenv** - Environment configuration management
 
 ---
 
@@ -456,7 +407,6 @@ Copyright (c) 2025 ChronoCoders
 - [API Reference](https://github.com/ChronoCoders/proteus/wiki/API)
 - [Examples](https://github.com/ChronoCoders/proteus/tree/main/examples)
 - [Contributing Guide](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md)
 
 ---
 
