@@ -40,6 +40,16 @@ Proteus is a high-performance malware analysis tool built with Rust and Python, 
 - ⚡ **High Performance** - Rust-powered core with parallel processing via Rayon
 - 📦 **Batch Processing** - Scan entire directories efficiently
 
+### Detection Engines
+- 🤖 **ML Detection** - Random Forest (96% accuracy) + Isolation Forest anomaly detection
+- 🎯 **YARA Engine** - 40+ industry-standard detection rules
+  - **Ransomware**: WannaCry, Ryuk, Maze, Locky families
+  - **RAT Detection**: NanoCore, njRAT, DarkComet, Quasar, AsyncRAT
+  - **Banking Trojans**: Emotet, TrickBot, Dridex, Zeus, Formbook, AgentTesla
+  - **Packer Detection**: UPX, ASPack, Themida, VMProtect, PECompact, MPRESS
+  - **Suspicious Behaviors**: Code injection, credential dumping, keyloggers, browser theft
+- 🔬 **Multi-Layer Analysis** - Combine heuristic + ML + YARA for maximum accuracy
+
 ### Advanced Features
 - 🤖 **ML Ready** - Feature extraction pipeline for machine learning
 - 📈 **Feature Engineering** - 16+ features including entropy, imports, exports, strings
@@ -94,14 +104,19 @@ python cli.py file C:\path\to\sample.exe
 python cli.py file C:\path\to\sample.exe --ml
 ```
 
-**Analyze with full string extraction:**
+**Analyze with YARA rules:**
 ```bash
-python cli.py file C:\path\to\sample.exe --strings
+python cli.py file C:\path\to\sample.exe --yara
 ```
 
-**Complete analysis (ML + strings):**
+**Complete analysis (Heuristic + ML + YARA):**
 ```bash
-python cli.py file C:\path\to\sample.exe --ml --strings
+python cli.py file C:\path\to\sample.exe --ml --yara
+```
+
+**Full analysis with strings:**
+```bash
+python cli.py file C:\path\to\sample.exe --ml --yara --strings
 ```
 
 **String-only analysis:**
@@ -168,7 +183,7 @@ python ml_trainer.py
 ### Example Output
 ```
 ╔═══════════════════════════════════════╗
-║         PROTEUS v0.1.4                ║
+║         PROTEUS v0.2.0                ║
 ║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 
@@ -182,9 +197,19 @@ python ml_trainer.py
     - CreateRemoteThread
     - WriteProcessMemory
 
+[*] YARA Scan:
+[!] YARA Matches: 3
+    Rule: Suspicious_Code_Injection
+      Severity: HIGH
+      Family: suspicious
+    Rule: Emotet_Trojan
+      Severity: CRITICAL
+      Family: trojan
+    Rule: UPX_Packer
+      Severity: MEDIUM
+      Family: packer
+
 [*] ML Analysis:
-[+] Random Forest loaded from models/rf_model.pkl
-[+] Isolation Forest loaded from models/iso_model.pkl
 [+] ML Prediction: MALICIOUS
 [+] Confidence: 100.00%
 [+] Probabilities:
@@ -320,15 +345,14 @@ Contributions are welcome! Please:
 
 ## 🗺️ Roadmap
 
-### v0.1.4 (Current) ✅
-- [x] ML prediction integration (96% accuracy)
-- [x] Random Forest classifier
-- [x] Isolation Forest anomaly detection
-- [x] Train with 576 real malware samples
-- [x] CLI --ml flag for ML predictions
-- [x] Confidence scores and probabilities
+### v0.2.0 (Current) ✅
+- [x] YARA rule engine (40+ detection rules)
+- [x] Ransomware, RAT, Trojan, Packer detection
+- [x] Suspicious behavior analysis
+- [x] CLI --yara flag integration
+- [x] Multi-layer detection (Heuristic + ML + YARA)
 
-### v0.2.0 (Planned)
+### v0.3.0 (Planned)
 - [ ] YARA rule engine integration
 - [ ] Advanced packer detection (UPX, ASPack, Themida)
 - [ ] Digital signature validation
@@ -353,7 +377,7 @@ Contributions are welcome! Please:
 
 ## ⚠️ Limitations
 
-**Current Version (v0.1.4):**
+**Current Version (v0.2.0):**
 - ML models require training on collected real-world samples
 - No dynamic analysis capabilities
 - Windows-focused (PE analysis more mature than ELF)

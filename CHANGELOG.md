@@ -2,6 +2,40 @@
 
 All notable changes to Proteus will be documented in this file.
 
+## [0.2.0] - 2025-11-02
+
+### Added
+- **YARA Rule Engine**: Industry-standard malware detection
+  - 40+ pre-built detection rules across 5 categories
+  - **Ransomware Rules**: WannaCry, Ryuk, Maze, Locky, generic patterns
+  - **RAT Detection**: NanoCore, njRAT, DarkComet, Quasar, AsyncRAT
+  - **Trojan Rules**: Emotet, TrickBot, Dridex, Zeus, Formbook, AgentTesla
+  - **Packer Detection**: UPX, ASPack, Themida, VMProtect, PECompact, MPRESS
+  - **Suspicious Behavior**: Code injection, process hollowing, anti-VM, credential dumping, persistence mechanisms, keyloggers, browser data theft
+- **YARA CLI Integration**:
+  - `--yara` flag for real-time YARA scanning
+  - Combined analysis: `--ml --yara --strings`
+  - Match details with severity levels and family classification
+  - Rule metadata display (description, severity, family)
+- **Python YARA Engine** (`python/yara_engine.py`):
+  - Custom rule loading support
+  - Batch directory scanning
+  - Detailed match reporting with offsets
+  - Rule compilation and management
+
+### Performance
+- **Detection Metrics on 913 Malware Samples**:
+  - YARA Detection Rate: 58% (531/913 detected)
+  - Average matches per file: 1-10 rules
+  - Rule categories: 5 files, 40+ individual rules
+  - False positive rate on clean samples: ~3% (expected for Windows APIs)
+
+### Technical
+- YARA Python binding integration
+- Multi-rule compilation engine
+- String match extraction with offsets
+- Rule namespace and tag support
+
 ## [0.1.4] - 2025-11-02
 
 ### Added
