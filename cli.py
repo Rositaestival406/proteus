@@ -23,7 +23,7 @@ def check_proteus_module():
 def print_banner():
     banner = """
 ╔═══════════════════════════════════════╗
-║         PROTEUS v0.1.0                ║
+║         PROTEUS v0.1.4                ║
 ║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 """
