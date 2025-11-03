@@ -36,7 +36,7 @@ class ConfigManager:
                     api_key = config.get("api_key", "")
                     if api_key:
                         return api_key
-            except (json.JSONDecodeError, IOError):
+            except (json.JSONDecodeError, OSError, PermissionError):
                 pass
 
         return ""
@@ -58,7 +58,7 @@ class ConfigManager:
 
             return True
 
-        except (IOError, json.JSONDecodeError):
+        except (OSError, json.JSONDecodeError, PermissionError):
             return False
 
     @staticmethod
@@ -78,7 +78,7 @@ class ConfigManager:
                 with open(ConfigManager.CONFIG_FILE, "r", encoding="utf-8") as f:
                     user_config = json.load(f)
                     config.update(user_config)
-            except (json.JSONDecodeError, IOError):
+            except (json.JSONDecodeError, OSError, PermissionError):
                 pass
 
         for key in config.keys():
@@ -86,14 +86,17 @@ class ConfigManager:
             env_value = os.getenv(env_key)
             if env_value:
                 current_val = config[key]
-                if isinstance(current_val, int):
-                    config[key] = int(env_value)
-                elif isinstance(current_val, float):
-                    config[key] = float(env_value)
-                elif isinstance(current_val, bool):
-                    config[key] = env_value.lower() in ("true", "1", "yes")
-                else:
-                    config[key] = env_value
+                try:
+                    if isinstance(current_val, int):
+                        config[key] = int(env_value)
+                    elif isinstance(current_val, float):
+                        config[key] = float(env_value)
+                    elif isinstance(current_val, bool):
+                        config[key] = env_value.lower() in ("true", "1", "yes")
+                    else:
+                        config[key] = env_value
+                except (ValueError, AttributeError):
+                    pass
 
         return config
 

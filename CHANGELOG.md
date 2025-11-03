@@ -2,6 +2,30 @@
 
 All notable changes to Proteus will be documented in this file.
 
+## [0.2.1] - 2025-11-03
+
+### Fixed
+- **Critical Dependencies**: Added missing `yara-python==4.5.1` to requirements.txt
+- **Cargo.toml**: Fixed YARA feature from `bundled-4_5_2` to `bundled` for compatibility
+- **CLI Error Handling**: Added proper ImportError handling for YARA module
+  - Shows helpful error message if yara-python not installed
+  - Graceful degradation when YARA unavailable
+- **API Key Security**: Removed API key logging in malware_collector.py
+  - Now shows "Loaded from environment" instead of key preview
+- **Dataset Path Priority**: Clarified dataset loading order in ml_trainer.py
+  - Priority 1: `dataset/malicious` (real malware from MalwareBazaar)
+  - Priority 2: `test_dataset/malicious` (synthetic fallback)
+  - Better error messages and recommendations
+
+### Changed
+- User-Agent updated to "Proteus/0.2.0" in malware_collector.py
+- Improved error messages throughout CLI
+- Better dataset configuration logging
+
+### Security
+- API key no longer printed to console (even partially)
+- Consistent security practices across codebase
+
 ## [0.2.0] - 2025-11-02
 
 ### Added

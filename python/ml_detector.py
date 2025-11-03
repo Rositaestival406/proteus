@@ -14,21 +14,27 @@ class ProteusMLDetector:
         self,
         rf_path: str = "models/rf_model.pkl",
         iso_path: str = "models/iso_model.pkl",
-    ):
+    ) -> None:
         rf_file = Path(rf_path)
         iso_file = Path(iso_path)
 
         if rf_file.exists():
-            with open(rf_path, "rb") as f:
-                self.rf_model = pickle.load(f)
-            print(f"[+] Random Forest loaded from {rf_path}")
+            try:
+                with open(rf_path, "rb") as f:
+                    self.rf_model = pickle.load(f)
+                print(f"[+] Random Forest loaded from {rf_path}")
+            except (pickle.UnpicklingError, EOFError) as e:
+                print(f"[!] Failed to load RF model: {e}")
         else:
             print(f"[!] Model not found: {rf_path}")
 
         if iso_file.exists():
-            with open(iso_path, "rb") as f:
-                self.isolation_model = pickle.load(f)
-            print(f"[+] Isolation Forest loaded from {iso_path}")
+            try:
+                with open(iso_path, "rb") as f:
+                    self.isolation_model = pickle.load(f)
+                print(f"[+] Isolation Forest loaded from {iso_path}")
+            except (pickle.UnpicklingError, EOFError) as e:
+                print(f"[!] Failed to load Isolation model: {e}")
         else:
             print(f"[!] Model not found: {iso_path}")
 
@@ -57,7 +63,7 @@ class ProteusMLDetector:
             ]
 
             return np.array(features).reshape(1, -1)
-        except Exception as e:
+        except (AttributeError, ValueError, RuntimeError) as e:
             print(f"[!] Error extracting features: {e}")
             return None
 
@@ -80,13 +86,24 @@ class ProteusMLDetector:
                 "error": "Feature extraction failed",
             }
 
-        rf_prediction = self.rf_model.predict(features)[0]
-        rf_proba = self.rf_model.predict_proba(features)[0]
+        try:
+            rf_prediction = self.rf_model.predict(features)[0]
+            rf_proba = self.rf_model.predict_proba(features)[0]
+        except (ValueError, AttributeError) as e:
+            return {
+                "prediction": "error",
+                "confidence": 0.0,
+                "anomaly_score": 0.0,
+                "error": f"Prediction failed: {e}",
+            }
 
         anomaly_score = 0.0
         if self.isolation_model is not None:
-            anomaly_prediction = self.isolation_model.predict(features)[0]
-            anomaly_score = self.isolation_model.score_samples(features)[0]
+            try:
+                anomaly_prediction = self.isolation_model.predict(features)[0]
+                anomaly_score = self.isolation_model.score_samples(features)[0]
+            except (ValueError, AttributeError):
+                pass
 
         result = {
             "prediction": "malicious" if rf_prediction == 1 else "clean",
@@ -96,7 +113,7 @@ class ProteusMLDetector:
                 "malicious": float(rf_proba[1]) if len(rf_proba) > 1 else 0.0,
             },
             "anomaly_score": float(anomaly_score),
-            "is_anomaly": anomaly_score < -0.5,
+            "is_anomaly": bool(anomaly_score < -0.5),
         }
 
         return result

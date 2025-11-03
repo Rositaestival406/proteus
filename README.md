@@ -245,9 +245,16 @@ proteus/
 │   ├── __init__.py
 │   ├── analyzer.py           # Main analyzer class
 │   ├── ml_detector.py        # ML model integration
-│   ├── config.py             # Configuration management (NEW v0.1.3)
-│   ├── validators.py         # Security validators (NEW v0.1.3)
-│   └── rate_limiter.py       # API rate limiting (NEW v0.1.3)
+│   ├── yara_engine.py        # YARA rule engine
+│   ├── config.py             # Configuration management
+│   ├── validators.py         # Security validators
+│   └── rate_limiter.py       # API rate limiting
+├── yara_rules/               # YARA detection rules
+│   ├── ransomware.yar        # Ransomware signatures
+│   ├── rats.yar              # RAT detection
+│   ├── trojans.yar           # Banking trojans
+│   ├── packers.yar           # Packer detection
+│   └── suspicious_behavior.yar # Behavioral analysis
 ├── cli.py                    # Command-line interface
 ├── malware_collector.py      # MalwareBazaar dataset collector
 ├── ml_trainer.py             # ML training pipeline
@@ -353,13 +360,13 @@ Contributions are welcome! Please:
 - [x] Multi-layer detection (Heuristic + ML + YARA)
 
 ### v0.3.0 (Planned)
-- [ ] YARA rule engine integration
-- [ ] Advanced packer detection (UPX, ASPack, Themida)
+- [ ] Advanced packer detection enhancements
 - [ ] Digital signature validation
 - [ ] PE resource section analysis
-- [ ] Retrain ML models with real-world dataset (500+ samples)
+- [ ] Retrain ML models with larger real-world dataset (1000+ samples)
+- [ ] Custom YARA rule support via CLI
 
-### v0.3.0 (Future)
+### v0.4.0 (Future)
 - [ ] HTML report generation
 - [ ] REST API server
 - [ ] Web dashboard
@@ -374,6 +381,7 @@ Contributions are welcome! Please:
 - Batch processing (100 files): ~3 seconds
 - String extraction: ~20ms
 - ML prediction: ~5ms
+- YARA scanning: ~100ms
 
 ## ⚠️ Limitations
 
@@ -412,6 +420,7 @@ Copyright (c) 2025 ChronoCoders
 **ChronoCoders Team**
 - Advanced static analysis engine
 - ML integration
+- YARA rule engine
 - Performance optimization
 
 ## 🙏 Acknowledgments
@@ -422,6 +431,7 @@ Copyright (c) 2025 ChronoCoders
 - **scikit-learn** - ML algorithms
 - **pyzipper** - AES-encrypted ZIP extraction
 - **MalwareBazaar** - Real-world malware sample repository
+- **YARA** - Industry-standard malware detection framework
 
 ---
 

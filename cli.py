@@ -23,14 +23,19 @@ def check_proteus_module():
 def print_banner():
     banner = """
 ╔═══════════════════════════════════════╗
-║         PROTEUS v0.1.4                ║
+║         PROTEUS v0.2.0                ║
 ║   Zero-Day Static Analysis Engine     ║
 ╚═══════════════════════════════════════╝
 """
     print(banner)
 
 
-def analyze_file_cmd(file_path: str, show_strings: bool = False, use_ml: bool = False, use_yara: bool = False):
+def analyze_file_cmd(
+    file_path: str,
+    show_strings: bool = False,
+    use_ml: bool = False,
+    use_yara: bool = False,
+):
     if not Path(file_path).exists():
         print(f"[!] Error: File not found - {file_path}")
         return
@@ -56,12 +61,12 @@ def analyze_file_cmd(file_path: str, show_strings: bool = False, use_ml: bool = 
         if use_yara:
             try:
                 from python.yara_engine import ProteusYaraEngine
-                
+
                 print(f"\n[*] YARA Scan:")
                 yara_engine = ProteusYaraEngine()
                 if yara_engine.load_rules():
                     yara_result = yara_engine.scan_file(file_path)
-                    
+
                     if yara_result.get("error"):
                         print(f"[!] YARA Error: {yara_result['error']}")
                     elif yara_result["match_count"] == 0:
@@ -70,28 +75,28 @@ def analyze_file_cmd(file_path: str, show_strings: bool = False, use_ml: bool = 
                         print(f"[!] YARA Matches: {yara_result['match_count']}")
                         for match in yara_result["matches"]:
                             print(f"    Rule: {match['rule']}")
-                            if match.get('meta'):
-                                meta = match['meta']
-                                if 'severity' in meta:
+                            if match.get("meta"):
+                                meta = match["meta"]
+                                if "severity" in meta:
                                     print(f"      Severity: {meta['severity'].upper()}")
-                                if 'family' in meta:
+                                if "family" in meta:
                                     print(f"      Family: {meta['family']}")
                 else:
                     print(f"[!] Failed to load YARA rules")
-                    
+
             except Exception as e:
                 print(f"[!] YARA scan failed: {e}")
 
         if use_ml:
             try:
                 from python.ml_detector import ProteusMLDetector
-                
+
                 print(f"\n[*] ML Analysis:")
                 detector = ProteusMLDetector()
                 detector.load_model()
-                
+
                 ml_result = detector.predict(file_path)
-                
+
                 if "error" in ml_result:
                     print(f"[!] ML Error: {ml_result['error']}")
                 else:
@@ -99,10 +104,14 @@ def analyze_file_cmd(file_path: str, show_strings: bool = False, use_ml: bool = 
                     print(f"[+] Confidence: {ml_result['confidence']*100:.2f}%")
                     print(f"[+] Probabilities:")
                     print(f"    Clean: {ml_result['probabilities']['clean']*100:.2f}%")
-                    print(f"    Malicious: {ml_result['probabilities']['malicious']*100:.2f}%")
-                    if ml_result['is_anomaly']:
-                        print(f"[!] Anomaly detected (score: {ml_result['anomaly_score']:.2f})")
-                        
+                    print(
+                        f"    Malicious: {ml_result['probabilities']['malicious']*100:.2f}%"
+                    )
+                    if ml_result["is_anomaly"]:
+                        print(
+                            f"[!] Anomaly detected (score: {ml_result['anomaly_score']:.2f})"
+                        )
+
             except Exception as e:
                 print(f"[!] ML Analysis failed: {e}")
 

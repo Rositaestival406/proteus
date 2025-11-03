@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Proteus - Advanced Zero-Day Static Analysis Engine built with Rust and Python for malware detection">
-    <meta name="keywords" content="malware analysis, static analysis, rust, python, security, threat detection">
+    <meta name="keywords" content="malware analysis, static analysis, rust, python, security, threat detection, yara">
     <meta name="author" content="ChronoCoders">
     <title>Proteus - Advanced Zero-Day Static Analysis Engine</title>
     <style>
@@ -179,18 +179,23 @@
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
         .tech-item {
             background: white;
-            padding: 30px;
+            padding: 35px 25px;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .tech-item:hover {
@@ -201,12 +206,14 @@
         .tech-item h4 {
             font-size: 1.2rem;
             color: #2d3748;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            line-height: 1.2;
         }
 
         .tech-item p {
             font-size: 0.9rem;
             color: #718096;
+            margin: 0;
         }
 
         .installation {
@@ -315,6 +322,61 @@
             font-size: 0.9rem;
             margin: 5px;
         }
+
+        .detection-engines {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .engine-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .engine-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .engine-icon {
+            width: 48px;
+            height: 48px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .engine-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #667eea;
+        }
+
+        .engine-card h3 {
+            color: #2d3748;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .engine-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .engine-card ul li {
+            padding: 8px 0;
+            color: #4a5568;
+        }
+
+        .engine-card ul li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -325,7 +387,8 @@
             <div style="margin: 20px 0;">
                 <span class="badge">Rust 1.83+</span>
                 <span class="badge">Python 3.10+</span>
-                <span class="badge">v0.1.3</span>
+                <span class="badge">YARA 4.5+</span>
+                <span class="badge">v0.2.0</span>
             </div>
             <div class="cta-buttons">
                 <a href="https://github.com/ChronoCoders/proteus" class="btn btn-primary">View on GitHub</a>
@@ -363,7 +426,7 @@
                         </svg>
                     </div>
                     <h3>Machine Learning Ready</h3>
-                    <p>Extract 16+ features per sample for ML pipelines. Includes Random Forest and Isolation Forest classifiers with anomaly detection.</p>
+                    <p>Extract 16+ features per sample for ML pipelines. Includes Random Forest (96% accuracy) and Isolation Forest classifiers with anomaly detection.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -389,9 +452,67 @@
                             <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
                         </svg>
                     </div>
-                    <h3>Heuristic Scoring</h3>
-                    <p>Intelligent threat assessment with configurable thresholds. Suspicious API detection for both Windows PE and Linux ELF binaries.</p>
+                    <h3>YARA Rule Engine</h3>
+                    <p>Industry-standard malware detection with 40+ pre-built rules. Detect ransomware, RATs, trojans, packers, and suspicious behaviors with high precision.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detection-engines">
+        <div class="container">
+            <h2 class="section-title">Multi-Layer Detection Engines</h2>
+            
+            <div class="engine-card">
+                <div class="engine-card-header">
+                    <div class="engine-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                        </svg>
+                    </div>
+                    <h3>YARA Rule Engine (40+ Rules)</h3>
+                </div>
+                <ul>
+                    <li><strong>Ransomware Detection:</strong> WannaCry, Ryuk, Maze, Locky, Generic patterns</li>
+                    <li><strong>RAT Detection:</strong> NanoCore, njRAT, DarkComet, Quasar, AsyncRAT</li>
+                    <li><strong>Banking Trojans:</strong> Emotet, TrickBot, Dridex, Zeus, Formbook, AgentTesla</li>
+                    <li><strong>Packer Detection:</strong> UPX, ASPack, Themida, VMProtect, PECompact, MPRESS</li>
+                    <li><strong>Suspicious Behaviors:</strong> Code injection, process hollowing, anti-VM, credential dumping, keyloggers</li>
+                </ul>
+            </div>
+
+            <div class="engine-card">
+                <div class="engine-card-header">
+                    <div class="engine-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3>Machine Learning Detection</h3>
+                </div>
+                <ul>
+                    <li><strong>Random Forest Classifier:</strong> 96.22% accuracy on real-world dataset</li>
+                    <li><strong>Isolation Forest:</strong> Anomaly detection for unknown threats</li>
+                    <li><strong>Feature Extraction:</strong> 16+ features per sample</li>
+                    <li><strong>Training Dataset:</strong> 1,190 samples (576 malware + 614 clean)</li>
+                </ul>
+            </div>
+
+            <div class="engine-card">
+                <div class="engine-card-header">
+                    <div class="engine-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3>Heuristic Analysis</h3>
+                </div>
+                <ul>
+                    <li><strong>Entropy Analysis:</strong> Detect packed/encrypted binaries</li>
+                    <li><strong>API Monitoring:</strong> Suspicious Windows/Linux API usage</li>
+                    <li><strong>String Analysis:</strong> IOC extraction (URLs, IPs, registry keys)</li>
+                    <li><strong>Section Analysis:</strong> Abnormal PE/ELF section characteristics</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -401,20 +522,28 @@
             <h2 class="section-title">Detection Metrics</h2>
             <div class="metrics-grid">
                 <div class="metric">
-                    <div class="metric-value">100%</div>
-                    <div class="metric-label">Detection Rate</div>
+                    <div class="metric-value">96%</div>
+                    <div class="metric-label">ML Accuracy</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-value">0%</div>
-                    <div class="metric-label">False Positives</div>
+                    <div class="metric-value">58%</div>
+                    <div class="metric-label">YARA Detection Rate</div>
                 </div>
                 <div class="metric">
                     <div class="metric-value">50ms</div>
                     <div class="metric-label">Avg Analysis Time</div>
                 </div>
                 <div class="metric">
+                    <div class="metric-value">40+</div>
+                    <div class="metric-label">YARA Rules</div>
+                </div>
+                <div class="metric">
                     <div class="metric-value">16+</div>
-                    <div class="metric-label">Features Extracted</div>
+                    <div class="metric-label">ML Features</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">0.97%</div>
+                    <div class="metric-label">False Positive Rate</div>
                 </div>
             </div>
         </div>
@@ -433,6 +562,10 @@
                     <p>Orchestration</p>
                 </div>
                 <div class="tech-item">
+                    <h4>YARA</h4>
+                    <p>Rule Engine</p>
+                </div>
+                <div class="tech-item">
                     <h4>goblin</h4>
                     <p>Binary Parsing</p>
                 </div>
@@ -447,6 +580,10 @@
                 <div class="tech-item">
                     <h4>scikit-learn</h4>
                     <p>ML Pipeline</p>
+                </div>
+                <div class="tech-item">
+                    <h4>MalwareBazaar</h4>
+                    <p>Dataset Source</p>
                 </div>
             </div>
         </div>
@@ -471,8 +608,8 @@ pip install -r requirements.txt
 # Build Rust module
 maturin develop --release
 
-# Analyze a file
-python cli.py file sample.exe
+# Analyze a file (all engines)
+python cli.py file sample.exe --ml --yara --strings
 
 # Collect malware dataset
 python malware_collector.py</pre>
@@ -489,6 +626,10 @@ python malware_collector.py</pre>
                     <p>Automated dataset collection from MalwareBazaar with AES-encrypted ZIP extraction. Supports 10+ malware categories including ransomware, trojans, and stealers.</p>
                 </div>
                 <div class="feature-card">
+                    <h3>Multi-Layer Detection</h3>
+                    <p>Combine heuristic + ML + YARA engines for maximum detection accuracy. Each layer provides complementary analysis for comprehensive threat assessment.</p>
+                </div>
+                <div class="feature-card">
                     <h3>Batch Processing</h3>
                     <p>Scan entire directories with parallel processing. Process 100 files in under 3 seconds with comprehensive JSON output reporting.</p>
                 </div>
@@ -499,10 +640,6 @@ python malware_collector.py</pre>
                 <div class="feature-card">
                     <h3>Security Hardened</h3>
                     <p>Path traversal protection, input validation, and rate limiting. File extension whitelisting and sanitization against malicious inputs.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>IOC Extraction</h3>
-                    <p>Automatic detection of URLs, IP addresses, registry keys, and file paths. Identify command-and-control infrastructure indicators.</p>
                 </div>
                 <div class="feature-card">
                     <h3>Extensible Architecture</h3>

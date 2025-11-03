@@ -9,7 +9,7 @@ class RateLimiter:
     def __init__(self, max_requests: int, time_window: float):
         self.max_requests = max_requests
         self.time_window = time_window
-        self.requests: deque = deque()
+        self.requests: deque[float] = deque()
         self.lock = Lock()
 
     def acquire(self) -> bool:
@@ -46,6 +46,6 @@ class RateLimiter:
 
             return max(0.0, wait_time)
 
-    def reset(self):
+    def reset(self) -> None:
         with self.lock:
             self.requests.clear()
