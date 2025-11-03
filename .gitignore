@@ -23,6 +23,14 @@ build/
 .coverage
 htmlcov/
 
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
 # IDEs
 .vscode/
 .idea/
@@ -77,4 +85,4 @@ desktop.ini
 # Project specific
 malware_collector.py.bak
 api_keys.txt
-passwords.txt.pypirc 
+passwords.txt
