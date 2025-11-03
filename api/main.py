@@ -80,6 +80,25 @@ async def health_check():
     }
 
 
+@app.get("/api/stats")
+async def get_stats():
+    """Get system statistics including YARA rule count"""
+    stats = {
+        "ml_loaded": ml_detector.rf_model is not None,
+        "yara_loaded": yara_engine.compiled_rules is not None,
+        "yara_info": None
+    }
+
+    if yara_engine.compiled_rules:
+        try:
+            stats["yara_info"] = yara_engine.get_rule_info()
+        except Exception as e:
+            print(f"[!] Error getting YARA info: {e}")
+            stats["yara_info"] = {"rule_files": 0, "error": str(e)}
+
+    return stats
+
+
 @app.post("/api/scan")
 async def scan_file(
     file: UploadFile = File(...),
@@ -93,9 +112,12 @@ async def scan_file(
     use_ml = ml.lower() == "true"
     use_yara = yara.lower() == "true"
     use_strings = strings.lower() == "true"
+    
+    # Accept all file types for analysis
+    suffix = Path(file.filename).suffix if Path(file.filename).suffix else ".bin"
 
     with tempfile.NamedTemporaryFile(
-        delete=False, suffix=Path(file.filename).suffix
+        delete=False, suffix=suffix
     ) as tmp:
         shutil.copyfileobj(file.file, tmp)
         tmp_path = tmp.name
@@ -148,23 +170,6 @@ async def scan_file(
             Path(tmp_path).unlink()
         except:
             pass
-
-
-@app.get("/api/stats")
-async def get_stats():
-    stats = {
-        "ml_loaded": ml_detector.rf_model is not None,
-        "yara_loaded": yara_engine.compiled_rules is not None,
-    }
-
-    if yara_engine.compiled_rules:
-        try:
-            stats["yara_info"] = yara_engine.get_rule_info()
-        except Exception as e:
-            print(f"[!] Error getting YARA info: {e}")
-            stats["yara_info"] = None
-
-    return stats
 
 
 if __name__ == "__main__":

@@ -98,12 +98,16 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="glass rounded-xl p-6">
                     <h3 class="text-lg font-semibold mb-4">Detection Rate</h3>
-                    <canvas id="detectionChart"></canvas>
+                    <div style="position: relative; height: 300px;">
+                        <canvas id="detectionChart"></canvas>
+                    </div>
                 </div>
                 
                 <div class="glass rounded-xl p-6">
                     <h3 class="text-lg font-semibold mb-4">Threat Distribution</h3>
-                    <canvas id="threatChart"></canvas>
+                    <div style="position: relative; height: 300px;">
+                        <canvas id="threatChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,16 +188,99 @@
     <script>
         console.log('[PROTEUS] Inline JavaScript loaded');
         
-        // Navigation function
+        let detectionChart = null;
+        let threatChart = null;
+        let scanHistory = [];
+        
+        function saveToHistory(result) {
+            const historyItem = {
+                id: Date.now(),
+                timestamp: new Date().toISOString(),
+                filename: result.filename,
+                verdict: result.heuristic.verdict,
+                score: result.heuristic.score,
+                ml_prediction: result.ml?.prediction,
+                yara_matches: result.yara?.match_count || 0
+            };
+            
+            scanHistory.unshift(historyItem);
+            
+            if (scanHistory.length > 50) {
+                scanHistory = scanHistory.slice(0, 50);
+            }
+            
+            localStorage.setItem('proteus_history', JSON.stringify(scanHistory));
+            updateDashboardStats();
+            console.log('[PROTEUS] Saved to history:', historyItem);
+        }
+        
+        function loadHistory() {
+            const stored = localStorage.getItem('proteus_history');
+            if (stored) {
+                try {
+                    scanHistory = JSON.parse(stored);
+                    console.log('[PROTEUS] Loaded history:', scanHistory.length, 'items');
+                } catch (e) {
+                    console.error('[PROTEUS] Failed to parse history:', e);
+                    scanHistory = [];
+                }
+            }
+            renderHistory();
+            updateDashboardStats();
+        }
+        
+        function renderHistory() {
+            const historyList = document.getElementById('history-list');
+            
+            if (scanHistory.length === 0) {
+                historyList.innerHTML = '<p class="text-center text-slate-400 py-8">No scans yet</p>';
+                return;
+            }
+            
+            historyList.innerHTML = scanHistory.map(item => `
+                <div class="glass rounded-lg p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-4 flex-1 min-w-0">
+                        <div class="text-2xl flex-shrink-0">
+                            ${item.verdict === 'MALICIOUS' ? '⚠️' : '✅'}
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="font-semibold truncate" title="${item.filename}">${item.filename}</div>
+                            <div class="text-sm text-slate-400">
+                                ${new Date(item.timestamp).toLocaleString()}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right flex-shrink-0 ml-4">
+                        <div class="text-lg font-bold ${item.verdict === 'MALICIOUS' ? 'text-red-400' : 'text-green-400'}">
+                            ${item.score.toFixed(1)}/100
+                        </div>
+                        <div class="text-xs text-slate-400">
+                            ${item.yara_matches} YARA
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function updateDashboardStats() {
+            const today = new Date().toDateString();
+            const todayScans = scanHistory.filter(item => 
+                new Date(item.timestamp).toDateString() === today
+            );
+            
+            document.getElementById('scans-today').textContent = todayScans.length;
+            
+            const threats = scanHistory.filter(item => item.verdict === 'MALICIOUS');
+            document.getElementById('threats-detected').textContent = threats.length;
+        }
+        
         function showSection(section) {
             console.log('[PROTEUS] Switching to:', section);
             
-            // Hide all sections
             document.querySelectorAll('.section').forEach(el => {
                 el.classList.add('hidden');
             });
             
-            // Show target section
             const target = document.getElementById(section + '-section');
             if (target) {
                 target.classList.remove('hidden');
@@ -202,13 +289,11 @@
                 console.error('[PROTEUS] Section not found:', section);
             }
             
-            // Update nav buttons
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('text-white', 'font-semibold');
                 btn.classList.add('text-slate-300');
             });
             
-            // Highlight active button
             const activeBtn = event?.target;
             if (activeBtn) {
                 activeBtn.classList.remove('text-slate-300');
@@ -216,23 +301,106 @@
             }
         }
         
-        // File upload handling
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/stats');
+                const data = await response.json();
+                
+                console.log('[PROTEUS] Stats loaded:', data);
+                
+                if (data.yara_info && data.yara_info.rule_files) {
+                    document.getElementById('yara-rules').textContent = data.yara_info.rule_files;
+                }
+                
+                if (data.ml_loaded) {
+                    document.getElementById('ml-status').classList.remove('bg-gray-500');
+                    document.getElementById('ml-status').classList.add('bg-green-500', 'pulse');
+                }
+                
+                if (data.yara_loaded) {
+                    document.getElementById('yara-status').classList.remove('bg-gray-500');
+                    document.getElementById('yara-status').classList.add('bg-green-500', 'pulse');
+                }
+            } catch (error) {
+                console.error('[PROTEUS] Failed to load stats:', error);
+            }
+        }
+        
+        function initCharts() {
+            const detectionCtx = document.getElementById('detectionChart');
+            const threatCtx = document.getElementById('threatChart');
+            
+            if (detectionCtx) {
+                detectionChart = new Chart(detectionCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        datasets: [{
+                            label: 'Clean',
+                            data: [12, 19, 15, 25, 22, 18, 20],
+                            borderColor: 'rgb(34, 197, 94)',
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }, {
+                            label: 'Malicious',
+                            data: [5, 8, 6, 10, 9, 7, 8],
+                            borderColor: 'rgb(239, 68, 68)',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: 'rgb(148, 163, 184)' } } },
+                        scales: {
+                            y: { beginAtZero: true, ticks: { color: 'rgb(148, 163, 184)' }, grid: { color: 'rgba(148, 163, 184, 0.1)' } },
+                            x: { ticks: { color: 'rgb(148, 163, 184)' }, grid: { color: 'rgba(148, 163, 184, 0.1)' } }
+                        }
+                    }
+                });
+            }
+            
+            if (threatCtx) {
+                threatChart = new Chart(threatCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Ransomware', 'Trojan', 'RAT', 'Stealer', 'Other'],
+                        datasets: [{
+                            data: [15, 25, 20, 18, 22],
+                            backgroundColor: ['rgb(239, 68, 68)', 'rgb(249, 115, 22)', 'rgb(234, 179, 8)', 'rgb(168, 85, 247)', 'rgb(59, 130, 246)'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'right', labels: { color: 'rgb(148, 163, 184)', padding: 15 } } }
+                    }
+                });
+            }
+        }
+        
         let selectedFile = null;
         
         document.addEventListener('DOMContentLoaded', () => {
             console.log('[PROTEUS] DOM Ready');
             
+            loadStats();
+            loadHistory();
+            initCharts();
+            
             const dropzone = document.getElementById('dropzone');
             const fileInput = document.getElementById('fileInput');
             const scanBtn = document.getElementById('scan-btn');
             
-            // Dropzone click
             dropzone.addEventListener('click', () => {
                 console.log('[PROTEUS] Dropzone clicked');
                 fileInput.click();
             });
             
-            // File input change
             fileInput.addEventListener('change', (e) => {
                 if (e.target.files.length > 0) {
                     const file = e.target.files[0];
@@ -243,7 +411,7 @@
                         <svg class="w-12 h-12 mx-auto mb-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <h3 class="text-xl font-semibold mb-2">${file.name}</h3>
+                        <h3 class="text-xl font-semibold mb-2 truncate max-w-full px-4" title="${file.name}">${file.name}</h3>
                         <p class="text-slate-400">${(file.size / 1024).toFixed(2)} KB</p>
                     `;
                     
@@ -251,7 +419,6 @@
                 }
             });
             
-            // Scan button
             scanBtn.addEventListener('click', async () => {
                 if (!selectedFile) return;
                 
@@ -274,7 +441,9 @@
                     });
                     
                     if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}`);
+                        const errorText = await response.text();
+                        console.error('[PROTEUS] Server error:', errorText);
+                        throw new Error(`HTTP ${response.status}: ${errorText}`);
                     }
                     
                     const result = await response.json();
@@ -283,22 +452,82 @@
                     document.getElementById('progress-bar').style.width = '100%';
                     document.getElementById('progress-text').textContent = 'Complete!';
                     
+                    // Save to history
+                    saveToHistory(result);
+                    
                     setTimeout(() => {
                         document.getElementById('progress-section').classList.add('hidden');
                         
                         const verdict = result.heuristic.verdict;
+                        const score = result.heuristic.score;
                         const color = verdict === 'MALICIOUS' ? 'text-red-400' : 'text-green-400';
+                        const icon = verdict === 'MALICIOUS' ? '⚠️' : '✅';
                         
-                        document.getElementById('results-section').innerHTML = `
+                        let html = `
                             <div class="glass rounded-xl p-8">
-                                <h3 class="text-2xl font-bold ${color} mb-4">${verdict}</h3>
-                                <p class="text-slate-400">${result.filename}</p>
-                                <div class="mt-4">
-                                    <div class="text-3xl font-bold ${color}">${result.heuristic.score.toFixed(1)}</div>
-                                    <div class="text-sm text-slate-400">Threat Score</div>
+                                <div class="flex items-center justify-between mb-6">
+                                    <div class="flex items-center space-x-4 flex-1 min-w-0">
+                                        <div class="text-4xl flex-shrink-0">${icon}</div>
+                                        <div class="min-w-0 flex-1">
+                                            <h3 class="text-2xl font-bold ${color}">${verdict}</h3>
+                                            <p class="text-slate-400 truncate" title="${result.filename}">${result.filename}</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right flex-shrink-0 ml-4">
+                                        <div class="text-3xl font-bold ${color}">${score.toFixed(1)}</div>
+                                        <div class="text-sm text-slate-400">Threat Score</div>
+                                    </div>
                                 </div>
-                            </div>
+                                
+                                <div class="grid grid-cols-3 gap-4 mb-6">
+                                    <div class="glass rounded-lg p-4">
+                                        <div class="text-sm text-slate-400">Type</div>
+                                        <div class="font-semibold">${result.heuristic.type}</div>
+                                    </div>
+                                    <div class="glass rounded-lg p-4">
+                                        <div class="text-sm text-slate-400">Entropy</div>
+                                        <div class="font-semibold">${result.heuristic.entropy.toFixed(2)}</div>
+                                    </div>
+                                    <div class="glass rounded-lg p-4">
+                                        <div class="text-sm text-slate-400">Indicators</div>
+                                        <div class="font-semibold">${result.heuristic.indicators.length}</div>
+                                    </div>
+                                </div>
                         `;
+                        
+                        if (result.heuristic.indicators.length > 0) {
+                            html += '<div class="mb-6"><h4 class="font-semibold mb-2">Suspicious Indicators</h4><div class="space-y-2">';
+                            result.heuristic.indicators.forEach(ind => {
+                                html += `<div class="glass p-2 text-sm">${ind}</div>`;
+                            });
+                            html += '</div></div>';
+                        }
+                        
+                        if (result.ml && !result.ml.error) {
+                            const mlColor = result.ml.prediction === 'malicious' ? 'text-red-400' : 'text-green-400';
+                            html += `
+                                <div class="mb-6">
+                                    <h4 class="font-semibold mb-2">ML Analysis</h4>
+                                    <div class="glass p-4">
+                                        <div class="${mlColor} font-bold">${result.ml.prediction.toUpperCase()}</div>
+                                        <div class="text-sm">Confidence: ${(result.ml.confidence * 100).toFixed(1)}%</div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        
+                        if (result.yara && result.yara.match_count > 0) {
+                            html += `<div class="mb-6"><h4 class="font-semibold mb-2">YARA (${result.yara.match_count} matches)</h4>`;
+                            result.yara.matches.forEach(m => {
+                                html += `<div class="glass p-3 mb-2"><div class="text-red-400 font-semibold">${m.rule}</div>`;
+                                if (m.meta?.description) html += `<div class="text-sm text-slate-400">${m.meta.description}</div>`;
+                                html += '</div>';
+                            });
+                            html += '</div>';
+                        }
+                        
+                        html += '</div>';
+                        document.getElementById('results-section').innerHTML = html;
                         document.getElementById('results-section').classList.remove('hidden');
                     }, 500);
                     
