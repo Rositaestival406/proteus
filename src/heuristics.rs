@@ -1,91 +1,119 @@
-pub struct HeuristicScore {
-    pub total_score: f64,
+use crate::packer_detector::{PackerDetector, PackerInfo};
+
+pub struct HeuristicAnalyzer {
+    packer_detector: PackerDetector,
 }
 
-pub fn calculate_pe_score(
-    entropy: f64,
-    suspicious_imports: usize,
-    num_sections: usize,
-) -> HeuristicScore {
-    let mut score_components = Vec::new();
+impl HeuristicAnalyzer {
+    pub fn new() -> Self {
+        HeuristicAnalyzer {
+            packer_detector: PackerDetector::new(),
+        }
+    }
 
-    let entropy_score = if entropy > 7.8 {
-        score_components.push(("Very high entropy (packed/encrypted)", 100.0));
-        100.0
-    } else if entropy > 7.5 {
-        score_components.push(("High entropy (likely packed)", 85.0));
-        85.0
-    } else if entropy > 7.2 {
-        score_components.push(("Elevated entropy", 70.0));
-        70.0
-    } else if entropy > 6.8 {
-        score_components.push(("Moderate entropy", 40.0));
-        40.0
-    } else {
-        (entropy / 8.0) * 30.0
-    };
+    pub fn analyze(
+        &self,
+        entropy: f64,
+        import_count: usize,
+        export_count: usize,
+        suspicious_apis: &[String],
+        data: &[u8],
+    ) -> (f64, Vec<String>, PackerInfo) {
+        let mut score: f64 = 0.0;
+        let mut indicators = Vec::new();
 
-    let import_score = if suspicious_imports >= 5 {
-        score_components.push(("Many suspicious imports", 100.0));
-        100.0
-    } else if suspicious_imports >= 3 {
-        score_components.push(("Multiple suspicious imports", 70.0));
-        70.0
-    } else if suspicious_imports > 0 {
-        (suspicious_imports as f64 * 25.0).min(100.0)
-    } else {
-        0.0
-    };
+        // Packer detection
+        let packer_info = self.packer_detector.detect(data, entropy);
 
-    let section_score = if num_sections == 0 {
-        score_components.push(("No sections (malformed)", 80.0));
-        80.0
-    } else if num_sections == 1 {
-        score_components.push(("Single section (suspicious)", 60.0));
-        60.0
-    } else if num_sections == 2 {
-        score_components.push(("Two sections (unusual)", 40.0));
-        40.0
-    } else if num_sections > 15 {
-        score_components.push(("Too many sections", 50.0));
-        50.0
-    } else if !(3..=10).contains(&num_sections) {
-        20.0
-    } else {
-        0.0
-    };
+        if packer_info.detected {
+            score += 15.0;
+            indicators.push(format!(
+                "Packed with {} ({:.0}% confidence)",
+                packer_info.packer_name,
+                packer_info.confidence * 100.0
+            ));
+        }
 
-    let total = (entropy_score * 0.6 + import_score * 0.3 + section_score * 0.1).min(100.0);
+        // Entropy-based scoring
+        if entropy > 7.8 {
+            score += 25.0;
+            indicators.push(format!("Very high entropy: {:.2}", entropy));
+        } else if entropy > 7.5 {
+            score += 20.0;
+            indicators.push(format!("High entropy: {:.2}", entropy));
+        } else if entropy > 7.2 {
+            score += 10.0;
+            indicators.push(format!("Elevated entropy: {:.2}", entropy));
+        }
 
-    HeuristicScore { total_score: total }
+        // Import/Export analysis
+        if import_count == 0 {
+            score += 20.0;
+            indicators.push("No imports (suspicious)".to_string());
+        } else if import_count < 5 {
+            score += 10.0;
+            indicators.push(format!("Very few imports: {}", import_count));
+        }
+
+        if export_count > 100 {
+            score += 5.0;
+            indicators.push(format!("Many exports: {}", export_count));
+        }
+
+        // Suspicious API analysis
+        if !suspicious_apis.is_empty() {
+            let api_score = (suspicious_apis.len() as f64 * 3.0).min(30.0);
+            score += api_score;
+
+            for api in suspicious_apis.iter().take(10) {
+                indicators.push(format!("Suspicious API: {}", api));
+            }
+
+            if suspicious_apis.len() > 10 {
+                indicators.push(format!(
+                    "... and {} more suspicious APIs",
+                    suspicious_apis.len() - 10
+                ));
+            }
+        }
+
+        score = score.min(100.0);
+
+        (score, indicators, packer_info)
+    }
 }
 
-pub fn calculate_elf_score(
-    entropy: f64,
-    suspicious_symbols: usize,
-    stripped: bool,
-) -> HeuristicScore {
-    let entropy_score = if entropy > 7.8 {
-        100.0
-    } else if entropy > 7.5 {
-        85.0
-    } else if entropy > 7.2 {
-        70.0
-    } else {
-        (entropy / 8.0) * 50.0
-    };
+impl Default for HeuristicAnalyzer {
+    fn default() -> Self {
+        Self::new()
+    }
+}
 
-    let import_score = if suspicious_symbols >= 5 {
-        100.0
-    } else if suspicious_symbols >= 3 {
-        70.0
-    } else {
-        (suspicious_symbols as f64 * 25.0).min(100.0)
-    };
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let section_score = if stripped { 50.0 } else { 0.0 };
+    #[test]
+    fn test_packed_malware_high_score() {
+        let analyzer = HeuristicAnalyzer::new();
+        let data = b"UPX0 packed malware";
+        let suspicious = vec!["VirtualAlloc".to_string(), "CreateRemoteThread".to_string()];
 
-    let total = (entropy_score * 0.5 + import_score * 0.3 + section_score * 0.2).min(100.0);
+        let (score, indicators, packer) = analyzer.analyze(7.9, 5, 0, &suspicious, data);
 
-    HeuristicScore { total_score: total }
+        assert!(score > 50.0);
+        assert!(packer.detected);
+        assert!(!indicators.is_empty());
+    }
+
+    #[test]
+    fn test_clean_file_low_score() {
+        let analyzer = HeuristicAnalyzer::new();
+        let data = b"Normal executable data";
+
+        let (score, _, packer) = analyzer.analyze(6.5, 50, 10, &[], data);
+
+        assert!(score < 20.0);
+        assert!(!packer.detected);
+    }
 }

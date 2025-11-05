@@ -3,6 +3,7 @@ use pyo3::prelude::*;
 mod elf_parser;
 mod entropy;
 mod heuristics;
+mod packer_detector;
 mod pe_parser;
 mod python_bindings;
 mod string_extractor;

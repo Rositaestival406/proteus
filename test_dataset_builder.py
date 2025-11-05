@@ -190,9 +190,9 @@ class TestDatasetBuilder:
             return [], []
 
     def generate_report(self, malicious_results, clean_results):
-        print("\n╔═══════════════════════════════════════╗")
-        print("║        Dataset Statistics             ║")
-        print("╚═══════════════════════════════════════╝")
+        print("\n" + "=" * 40)
+        print("       Dataset Statistics")
+        print("=" * 40)
 
         print(f"\nMalicious samples: {len(malicious_results)}")
         if malicious_results:
@@ -229,9 +229,9 @@ class TestDatasetBuilder:
 
 
 def main():
-    print("╔═══════════════════════════════════════╗")
-    print("║   PROTEUS Test Dataset Builder        ║")
-    print("╚═══════════════════════════════════════╝\n")
+    print("=" * 40)
+    print("  PROTEUS Test Dataset Builder")
+    print("=" * 40 + "\n")
 
     builder = TestDatasetBuilder()
 

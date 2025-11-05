@@ -4,6 +4,19 @@ use pyo3::prelude::*;
 use rayon::prelude::*;
 
 #[pyclass]
+#[derive(Clone)]
+pub struct PackerInfo {
+    #[pyo3(get)]
+    pub detected: bool,
+    #[pyo3(get)]
+    pub packer_name: String,
+    #[pyo3(get)]
+    pub confidence: f64,
+    #[pyo3(get)]
+    pub indicators: Vec<String>,
+}
+
+#[pyclass]
 pub struct FileAnalysis {
     #[pyo3(get)]
     pub path: String,
@@ -23,6 +36,8 @@ pub struct FileAnalysis {
     pub section_count: usize,
     #[pyo3(get)]
     pub max_section_entropy: f64,
+    #[pyo3(get)]
+    pub packer: PackerInfo,
 }
 
 #[pyclass]
@@ -45,7 +60,11 @@ pub struct StringAnalysisResult {
 
 #[pyfunction]
 pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
+    use std::fs;
+
     let file_type = detect_file_type(&path);
+
+    let data = fs::read(&path).map_err(|e| pyo3::exceptions::PyIOError::new_err(e.to_string()))?;
 
     let (
         entropy,
@@ -55,46 +74,69 @@ pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
         export_count,
         section_count,
         max_section_entropy,
+        packer_info,
     ) = match file_type.as_str() {
         "PE" => {
             let analysis = crate::pe_parser::analyze_pe(&path)
                 .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
-            let score = crate::heuristics::calculate_pe_score(
+
+            let analyzer = crate::heuristics::HeuristicAnalyzer::new();
+            let (score, mut heuristic_indicators, packer_result) = analyzer.analyze(
                 analysis.entropy,
-                analysis.suspicious_imports.len(),
-                analysis.num_sections,
+                analysis.import_count,
+                analysis.export_count,
+                &analysis.suspicious_imports,
+                &data,
             );
+
+            heuristic_indicators.extend(analysis.suspicious_imports.clone());
+
             let max_entropy = analysis
                 .section_entropies
                 .iter()
                 .cloned()
                 .fold(0.0f64, f64::max);
+
             (
                 analysis.entropy,
-                score.total_score,
-                analysis.suspicious_imports,
+                score,
+                heuristic_indicators,
                 analysis.import_count,
                 analysis.export_count,
                 analysis.num_sections,
                 max_entropy,
+                PackerInfo {
+                    detected: packer_result.detected,
+                    packer_name: packer_result.packer_name,
+                    confidence: packer_result.confidence,
+                    indicators: packer_result.indicators,
+                },
             )
         }
         "ELF" => {
             let analysis = crate::elf_parser::analyze_elf(&path)
                 .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.to_string()))?;
-            let score = crate::heuristics::calculate_elf_score(
-                analysis.entropy,
-                analysis.suspicious_symbols.len(),
-                analysis.stripped,
-            );
+
+            let analyzer = crate::heuristics::HeuristicAnalyzer::new();
+            let (score, mut heuristic_indicators, packer_result) =
+                analyzer.analyze(analysis.entropy, 0, 0, &analysis.suspicious_symbols, &data);
+
+            heuristic_indicators.extend(analysis.suspicious_symbols.clone());
+
             (
                 analysis.entropy,
-                score.total_score,
-                analysis.suspicious_symbols,
+                score,
+                heuristic_indicators,
                 0,
                 0,
                 0,
                 0.0,
+                PackerInfo {
+                    detected: packer_result.detected,
+                    packer_name: packer_result.packer_name,
+                    confidence: packer_result.confidence,
+                    indicators: packer_result.indicators,
+                },
             )
         }
         _ => {
@@ -114,6 +156,7 @@ pub fn analyze_file(path: String) -> PyResult<FileAnalysis> {
         export_count,
         section_count,
         max_section_entropy,
+        packer: packer_info,
     })
 }
 

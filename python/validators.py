@@ -6,10 +6,28 @@ from typing import Optional
 class SecurityValidator:
 
     ALLOWED_EXTENSIONS = {
-        ".exe", ".dll", ".malware", ".bin", ".elf", ".so", 
-        ".pdf", ".doc", ".docx", ".zip", ".rar", ".7z",
-        ".apk", ".dex", ".jar", ".class", ".pyc",
-        ".sh", ".bat", ".cmd", ".ps1", ".vbs"
+        ".exe",
+        ".dll",
+        ".malware",
+        ".bin",
+        ".elf",
+        ".so",
+        ".pdf",
+        ".doc",
+        ".docx",
+        ".zip",
+        ".rar",
+        ".7z",
+        ".apk",
+        ".dex",
+        ".jar",
+        ".class",
+        ".pyc",
+        ".sh",
+        ".bat",
+        ".cmd",
+        ".ps1",
+        ".vbs",
     }
     MAX_FILE_SIZE_MB = 100
     SHA256_PATTERN = re.compile(r"^[a-fA-F0-9]{64}$")

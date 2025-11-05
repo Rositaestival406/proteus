@@ -51,7 +51,7 @@
                 <p class="text-slate-400">Real-time malware analysis and detection</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
                 <div class="glass rounded-xl p-6">
                     <div class="flex items-center justify-between mb-4">
                         <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,6 +72,16 @@
                     </div>
                     <div class="text-2xl font-bold mb-1" id="yara-rules">0</div>
                     <div class="text-sm text-slate-400">YARA Rules</div>
+                </div>
+                
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <div class="text-2xl font-bold mb-1 text-orange-400" id="packers-detected">0</div>
+                    <div class="text-sm text-slate-400">Packers Detected</div>
                 </div>
                 
                 <div class="glass rounded-xl p-6">
@@ -146,25 +156,38 @@
                     <h3 class="text-lg font-semibold mb-4">Analysis Options</h3>
                     
                     <div class="space-y-4">
-                        <label class="flex items-center space-x-3 cursor-pointer">
-                            <input type="checkbox" id="opt-ml" checked class="w-4 h-4 text-purple-600 rounded">
-                            <span class="text-sm">ML Prediction</span>
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <div class="flex items-center space-x-3">
+                                <input type="checkbox" id="opt-ml" checked class="w-4 h-4 text-purple-600 rounded">
+                                <span class="text-sm">ML Prediction</span>
+                            </div>
+                            <div id="status-ml" class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400">Active</div>
                         </label>
                         
-                        <label class="flex items-center space-x-3 cursor-pointer">
-                            <input type="checkbox" id="opt-yara" checked class="w-4 h-4 text-purple-600 rounded">
-                            <span class="text-sm">YARA Scanning</span>
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <div class="flex items-center space-x-3">
+                                <input type="checkbox" id="opt-yara" checked class="w-4 h-4 text-purple-600 rounded">
+                                <span class="text-sm">YARA Scanning</span>
+                            </div>
+                            <div id="status-yara" class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400">Active</div>
                         </label>
                         
-                        <label class="flex items-center space-x-3 cursor-pointer">
-                            <input type="checkbox" id="opt-strings" class="w-4 h-4 text-purple-600 rounded">
-                            <span class="text-sm">String Analysis</span>
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <div class="flex items-center space-x-3">
+                                <input type="checkbox" id="opt-strings" class="w-4 h-4 text-purple-600 rounded">
+                                <span class="text-sm">String Analysis</span>
+                            </div>
+                            <div id="status-strings" class="text-xs px-2 py-1 rounded bg-slate-500/20 text-slate-400">Inactive</div>
                         </label>
                     </div>
                     
                     <button id="scan-btn" disabled class="w-full mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition disabled:opacity-50">
                         Start Scan
                     </button>
+                    
+                    <div class="mt-4 text-xs text-slate-400 text-center">
+                        <span id="active-count">2</span> engines active
+                    </div>
                 </div>
             </div>
             
@@ -200,7 +223,9 @@
                 verdict: result.heuristic.verdict,
                 score: result.heuristic.score,
                 ml_prediction: result.ml?.prediction,
-                yara_matches: result.yara?.match_count || 0
+                yara_matches: result.yara?.match_count || 0,
+                packer_detected: result.heuristic.packer?.detected || false,
+                packer_name: result.heuristic.packer?.name || 'None'
             };
             
             scanHistory.unshift(historyItem);
@@ -272,6 +297,9 @@
             
             const threats = scanHistory.filter(item => item.verdict === 'MALICIOUS');
             document.getElementById('threats-detected').textContent = threats.length;
+            
+            const packers = scanHistory.filter(item => item.packer_detected === true);
+            document.getElementById('packers-detected').textContent = packers.length;
         }
         
         function showSection(section) {
@@ -396,6 +424,55 @@
             const fileInput = document.getElementById('fileInput');
             const scanBtn = document.getElementById('scan-btn');
             
+            // Checkbox status update
+            const optML = document.getElementById('opt-ml');
+            const optYara = document.getElementById('opt-yara');
+            const optStrings = document.getElementById('opt-strings');
+            
+            function updateOptionsStatus() {
+                const statusML = document.getElementById('status-ml');
+                const statusYara = document.getElementById('status-yara');
+                const statusStrings = document.getElementById('status-strings');
+                const activeCount = document.getElementById('active-count');
+                
+                let count = 0;
+                
+                if (optML.checked) {
+                    statusML.className = 'text-xs px-2 py-1 rounded bg-green-500/20 text-green-400';
+                    statusML.textContent = 'Active';
+                    count++;
+                } else {
+                    statusML.className = 'text-xs px-2 py-1 rounded bg-slate-500/20 text-slate-400';
+                    statusML.textContent = 'Inactive';
+                }
+                
+                if (optYara.checked) {
+                    statusYara.className = 'text-xs px-2 py-1 rounded bg-green-500/20 text-green-400';
+                    statusYara.textContent = 'Active';
+                    count++;
+                } else {
+                    statusYara.className = 'text-xs px-2 py-1 rounded bg-slate-500/20 text-slate-400';
+                    statusYara.textContent = 'Inactive';
+                }
+                
+                if (optStrings.checked) {
+                    statusStrings.className = 'text-xs px-2 py-1 rounded bg-green-500/20 text-green-400';
+                    statusStrings.textContent = 'Active';
+                    count++;
+                } else {
+                    statusStrings.className = 'text-xs px-2 py-1 rounded bg-slate-500/20 text-slate-400';
+                    statusStrings.textContent = 'Inactive';
+                }
+                
+                activeCount.textContent = count;
+            }
+            
+            optML.addEventListener('change', updateOptionsStatus);
+            optYara.addEventListener('change', updateOptionsStatus);
+            optStrings.addEventListener('change', updateOptionsStatus);
+            
+            updateOptionsStatus();
+            
             dropzone.addEventListener('click', () => {
                 console.log('[PROTEUS] Dropzone clicked');
                 fileInput.click();
@@ -503,6 +580,26 @@
                             html += '</div></div>';
                         }
                         
+                        if (result.heuristic.packer && result.heuristic.packer.detected) {
+                            const packerColor = 'text-orange-400';
+                            html += `
+                                <div class="mb-6">
+                                    <h4 class="font-semibold mb-2">Packer Detection</h4>
+                                    <div class="glass p-4 border-l-4 border-orange-500">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="${packerColor} font-bold text-lg">${result.heuristic.packer.name}</div>
+                                            <div class="text-sm text-slate-400">${(result.heuristic.packer.confidence * 100).toFixed(1)}% confidence</div>
+                                        </div>
+                                        ${result.heuristic.packer.indicators && result.heuristic.packer.indicators.length > 0 ? `
+                                            <div class="mt-2 text-sm text-slate-300">
+                                                ${result.heuristic.packer.indicators.map(ind => `<div>• ${ind}</div>`).join('')}
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        
                         if (result.ml && !result.ml.error) {
                             const mlColor = result.ml.prediction === 'malicious' ? 'text-red-400' : 'text-green-400';
                             html += `
@@ -526,7 +623,37 @@
                             html += '</div>';
                         }
                         
+                        // Add export buttons
+                        html += `
+                            <div class="mt-6 pt-6 border-t border-slate-700">
+                                <h4 class="font-semibold mb-3 flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Export Report
+                                </h4>
+                                <div class="flex gap-3">
+                                    <button onclick="exportReport('json')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition">
+                                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                        JSON
+                                    </button>
+                                    <button onclick="exportReport('html')" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition">
+                                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                        HTML Report
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+
                         html += '</div>';
+
+                        // Store result data globally for export
+                        window.currentScanResult = result;
+
                         document.getElementById('results-section').innerHTML = html;
                         document.getElementById('results-section').classList.remove('hidden');
                     }, 500);
@@ -538,6 +665,50 @@
                 }
             });
         });
+
+        // Export functionality
+        async function exportReport(format) {
+            if (!window.currentScanResult) {
+                alert('No scan results available to export');
+                return;
+            }
+
+            try {
+                const formData = new FormData();
+                formData.append('format', format);
+                formData.append('data', JSON.stringify(window.currentScanResult));
+
+                const response = await fetch('/api/export', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Export failed');
+                }
+
+                // Download the file
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+
+                const filename = window.currentScanResult.filename || 'scan_result';
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+                a.download = `${filename.replace(/[^a-zA-Z0-9]/g, '_')}_${timestamp}.${format}`;
+
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+
+                console.log(`[PROTEUS] Exported ${format.toUpperCase()} report successfully`);
+            } catch (error) {
+                console.error('[PROTEUS] Export error:', error);
+                alert(`Export failed: ${error.message}`);
+            }
+        }
     </script>
 </body>
 </html>

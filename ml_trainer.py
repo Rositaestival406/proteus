@@ -305,7 +305,7 @@ def main():
 
     # Try real malware dataset first (collected from MalwareBazaar)
     malicious_dir = "dataset/malicious"
-    clean_dir = "test_dataset/clean"
+    clean_dir = "dataset/clean"
 
     # Fallback to test_dataset if real malware not available
     if not Path(malicious_dir).exists():

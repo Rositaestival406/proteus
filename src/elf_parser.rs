@@ -4,6 +4,7 @@ use std::fs;
 pub struct ELFAnalysis {
     pub entropy: f64,
     pub suspicious_symbols: Vec<String>,
+    #[allow(dead_code)]
     pub stripped: bool,
 }
 
