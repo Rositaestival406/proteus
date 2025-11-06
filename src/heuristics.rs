@@ -99,7 +99,7 @@ mod tests {
         let data = b"UPX0 packed malware";
         let suspicious = vec!["VirtualAlloc".to_string(), "CreateRemoteThread".to_string()];
 
-        let (score, indicators, packer) = analyzer.analyze(7.9, 5, 0, &suspicious, data);
+        let (score, indicators, packer) = analyzer.analyze(7.9, 3, 0, &suspicious, data);
 
         assert!(score > 50.0);
         assert!(packer.detected);
